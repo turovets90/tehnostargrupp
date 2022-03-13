@@ -9,24 +9,37 @@ header
             .col_right
                 ul
                     li
-                        a.phone(href="#") +375 44 708-90-90 (Минск)
+                        a.phone(href="tel:+375 44 708-90-90") +375 44 708-90-90 <span>(Минск)</span>
                     li
-                        a.phone(href="#") +375 29 662-19-98 (Борисов)
+                        a.phone(href="tel:+375 29 662-19-98") +375 29 662-19-98 <span>(Борисов)</span>
                     li
-                        a.feeback(href="#") Связаться с нами 111
+                        a.feedback(href="#") Связаться с нами
 
     .nav_bar
         .container
-            .logo
-                a(href='/')
-                    img(src=dir+"logo.png")
-            .main_menu
-                ul.menu
-                    for nav_item, index in nav
+            .flex_container
+                .logo
+                    a(href='/')
+                        img(src=dir+"logo.png")
+                .mm_btn
+                    button.hamburger
+                        span
+                        span
+                        span
+                .main_menu
+                    ul.menu
+                        for nav_item, index in nav
+                            li
+                                a(href="#")=nav_item
+                                if index===0||index===1
+                                    ul.sub_menu
+                                        -for(var s=1;s<=5;s++)
+                                            li
+                                                a(href="#") Link #{s}
+                    ul.right_menu
                         li
-                            a(href="#")=nav_item
-                            if index===0||index===1
-                                ul.sub_menu
-                                    -for(var s=1;s<=5;s++)
-                                        li
-                                            a(href="#") Link #{s}
+                            .search_box
+                                button.search_btn
+
+                        li.d-xl-none
+                            a(href="#") Связаться с нами
