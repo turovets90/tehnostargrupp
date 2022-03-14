@@ -21,12 +21,9 @@ header
                 .logo
                     a(href='/')
                         img(src=dir+"logo.png")
-                .mm_btn
-                    button.hamburger
-                        span
-                        span
-                        span
+
                 .main_menu
+                    .mm_close
                     ul.menu
                         for nav_item, index in nav
                             li
@@ -36,10 +33,19 @@ header
                                         -for(var s=1;s<=5;s++)
                                             li
                                                 a(href="#") Link #{s}
-                    ul.right_menu
-                        li
-                            .search_box
-                                button.search_btn
+                ul.right_menu
+                    li
+                        .search_box.dropdown
+                            button.search_btn.dropdown-toggle(type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                            .dropdown-menu(aria-labelledby="dropdownMenuButton")
+                                form.search_form
+                                    input.form-control(type="text" placeholder="Введите ваш запрос")
+                                    button.search_form_btn(type="submit")
 
-                        li.d-xl-none
-                            a(href="#") Связаться с нами
+                    li.d-none
+                        a(href="#") Связаться с нами
+                    li.mm_btn
+                        button.hamburger
+                            span
+                            span
+                            span

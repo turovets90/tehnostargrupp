@@ -201,7 +201,10 @@ header
   +ai-center
   +j-beetween
   padding: 8px 0
-
+  @media (max-width: 767px)
+    +wrap
+    > div
+      width: 100%
   a
     text-decoration: none
     color: $text_color
@@ -210,6 +213,8 @@ header
     font-family: $rubik
     font-weight: 400
     padding-left: 22px
+    @media (max-width: 1200px)
+      font-size: 12px
     &:before
       +b_a
       left: 0
@@ -243,23 +248,328 @@ header
     span
       font-size: 12px
       font-weight: 300
+      @media (max-width: 1200px)
+        font-size: 11px
 
   ul
     +flex
+    @media (max-width: 767px)
+      +wrap
+      width: 100%
     li
+      @media (max-width: 767px)
+        width: 100%
+        text-align: center
       + li
         margin-left: 30px
+        @media (max-width: 1200px)
+          margin-left: 10px
 
 
 .nav_bar
   background: $bg_black
+  @media (max-width: 1200px)
+    padding: 10px 0
+  .flex_container
+    +j-beetween
+
+
+.mm_btn
+  @media (min-width: 1201px)
+    display: none
+
+  @media (max-width: 1200px)
+    margin-left: 20px
+    +flex
+  .hamburger
+    position: relative
+    background: none
+    border: 0
+    width: 25px
+    height: 20px
+    span
+      position: absolute
+      width: 100%
+      height: 2px
+      background: #fff
+      +border-radius(2px)
+      left: 0
+      &:nth-child(1)
+        top: 0
+
+      &:nth-child(2)
+        top: 0
+        bottom: 0
+        margin: auto
+      &:nth-child(3)
+        bottom: 0
+
 
 .flex_container
   +flex
   +wrap
+
+
 .main_menu
+  @media (max-width: 1200px)
+    position: fixed
+    top: 0
+    right: 0
+    width: 80%
+    height: 100%
+    z-index: 999
+    background: #312f30
+    padding: 20px 15px
+    +transition($transition_default)
+    +transform(translateX(100%))
+    opacity: 0
+    &.open
+      +transform(translateX(0))
+      opacity: 1
+
+  .mm_close
+    @media (min-width: 1201px)
+      display: none
+    width: 30px
+    height: 30px
+    border: 1px solid #fff
+    +border-radius(5px)
+    position: relative
+    &:before, &:after
+      +b_a
+      +m_a
+      width: 20px
+      height: 2px
+      background: #fff
+    &:before
+      +transform(rotate(45deg))
+    &:after
+      +transform(rotate(-45deg))
+
+  @media (min-width: 1201px)
+    +flex
+    +ai-center
   .menu
     +flex
     +ai-center
+    @media (max-width: 1200px)
+      +wrap
+      padding-top: 30px
+    > li
+      position: relative
+      @media (min-width: 1201px)
+        &:hover
+          .sub-menu, .sub_menu
+            display: block
+        +flex
+        +ai-center
+        padding: 30px 5px
+
+        .arrow
+          margin-left: 5px
+          width: 8px
+          height: 5px
+          pointer-events: none
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='5' viewBox='0 0 8 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1L4 4L7 1' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+
+      @media (min-width: 1301px)
+        padding: 30px 12px
+
+      @media (max-width: 1200px)
+        width: 100%
+        margin-bottom: 10px
+        .arrow
+          display: inline-block
+          width: 20px
+          height: 20px
+          border: 1px solid #fff
+          +border-radius(5px)
+          position: absolute
+          right: 0
+          top: 3px
+          &.act
+            &:after
+              opacity: 0
+          &:before, &:after
+            +b_a
+            +m_a
+            width: 10px
+            height: 1px
+            background: #fff
+          &:after
+            +transform(rotate(90deg))
+
+
+      a
+        color: #fff
+        text-transform: uppercase
+        font-family: $roboto
+        font-size: 13px
+        font-weight: 500
+        text-decoration: none
+
+        &:hover, &:focus
+          color: $red
+          text-decoration: none
+
     .sub-menu, .sub_menu
       display: none
+      @media (max-width: 1200px)
+        padding-left: 10px
+      @media (min-width: 1201px)
+        position: absolute
+        top: 100%
+        left: 0
+        background: #fff
+        z-index: 99
+        +box-shadow(1px 4px 15px rgba(49, 47, 48, 0.2))
+
+        min-width: 200px
+        padding: 10px 0
+        &:before
+          +b_a
+          width: 100%
+          height: 4px
+          background: $red
+          left: 0
+          top: 0
+        &:after
+          +b_a
+          width: 0
+          height: 0
+          border-bottom: 8px solid $red
+          border-right: 8px solid transparent
+          border-left: 8px solid transparent
+          left: 12px
+          top: -8px
+
+        li
+          margin-bottom: 10px
+          &:last-child
+            margin-bottom: 0
+          a
+            color: $text_color
+            text-transform: uppercase
+            font-family: $roboto
+            font-size: 13px
+            font-weight: 500
+            text-decoration: none
+            padding: 3px 10px
+            &:hover, &:focus
+              color: $red
+
+
+
+.logo
+  padding-top: 5px
+  margin-right: 20px
+  @media (max-width: 1300px)
+    max-width: 250px
+    +flex
+    +ai-center
+    padding-top: 0
+  @media (max-width: 767px)
+    max-width: 60%
+  a
+    display: inline-block
+
+
+.right_menu
+  +flex
+  +ai-center
+.search_box
+  position: relative
+  .search_btn
+    width: 30px
+    height: 30px
+    background: none
+    position: relative
+    border: 0
+    &:before
+      +b_a
+      +m_a
+      width: 23px
+      height: 26px
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='23' height='26' viewBox='0 0 23 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M14.5792 14.9497H13.721L13.4168 14.6564C14.4814 13.418 15.1224 11.8102 15.1224 10.0612C15.1224 6.16124 11.9611 3 8.06118 3C4.16124 3 1 6.16124 1 10.0612C1 13.9611 4.16124 17.1224 8.06118 17.1224C9.81018 17.1224 11.418 16.4814 12.6564 15.4168L12.9497 15.721V16.5792L18.3814 22L20 20.3814L14.5792 14.9497ZM8.06118 14.9497C5.3562 14.9497 3.17267 12.7662 3.17267 10.0612C3.17267 7.3562 5.3562 5.17267 8.06118 5.17267C10.7662 5.17267 12.9497 7.3562 12.9497 10.0612C12.9497 12.7662 10.7662 14.9497 8.06118 14.9497Z' fill='white'/%3e%3c/svg%3e ")
+
+  .dropdown-menu
+    left: initial !important
+    right: 0
+    +border-radius(0)
+    transform: translate3d(0, 55px, 0px) !important
+    +box-shadow(1px 4px 15px rgba(49, 47, 48, 0.2))
+    border: 0
+    padding: 30px
+    &:before
+      +b_a
+      width: 100%
+      height: 4px
+      background: $red
+      left: 0
+      top: 0
+    &:after
+      +b_a
+      width: 0
+      height: 0
+      border-bottom: 8px solid $red
+      border-left: 8px solid transparent
+      border-right: 8px solid transparent
+      top: -8px
+      right: 0
+
+.search_form
+  +flex
+  +ai-center
+  min-width: 372px
+  .form-control
+    background: #EEEEEE
+    +border-radius(2px 0 0 2px)
+    width: calc(100% - 45px)
+    border: 0
+    height: 45px
+    padding-left: 15px
+    color: $text_color
+    font-size: 14px
+    font-family: $rubik
+
+    &:hover, &:focus
+      +box-shadow(none)
+      outline: none
+    &::-webkit-input-placeholder
+      color: $text_color
+      font-size: 14px
+      font-family: $rubik
+    &::-moz-placeholder
+      color: $text_color
+      font-size: 14px
+      font-family: $rubik
+    &::-ms-input-placeholder
+      color: $text_color
+      font-size: 14px
+      font-family: $rubik
+    &:-moz-placeholder
+      color: $text_color
+      font-size: 14px
+      font-family: $rubik
+    &:-ms-input-placeholder
+      color: $text_color
+      font-size: 14px
+      font-family: $rubik
+
+  .search_form_btn
+    width: 45px
+    height: 45px
+    background: $red
+    position: relative
+    border: 0
+
+    &:before
+      +b_a
+      +m_a
+      width: 23px
+      height: 26px
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='23' height='26' viewBox='0 0 23 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M14.5792 14.9497H13.721L13.4168 14.6564C14.4814 13.418 15.1224 11.8102 15.1224 10.0612C15.1224 6.16124 11.9611 3 8.06118 3C4.16124 3 1 6.16124 1 10.0612C1 13.9611 4.16124 17.1224 8.06118 17.1224C9.81018 17.1224 11.418 16.4814 12.6564 15.4168L12.9497 15.721V16.5792L18.3814 22L20 20.3814L14.5792 14.9497ZM8.06118 14.9497C5.3562 14.9497 3.17267 12.7662 3.17267 10.0612C3.17267 7.3562 5.3562 5.17267 8.06118 5.17267C10.7662 5.17267 12.9497 7.3562 12.9497 10.0612C12.9497 12.7662 10.7662 14.9497 8.06118 14.9497Z' fill='white'/%3e%3c/svg%3e ")
+
+
+
+
