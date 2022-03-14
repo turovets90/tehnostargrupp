@@ -205,6 +205,23 @@ header
     +wrap
     > div
       width: 100%
+
+  ul
+    +flex
+    @media (max-width: 767px)
+      +wrap
+      width: 100%
+    li
+      @media (max-width: 767px)
+        width: 100%
+        text-align: center
+      + li
+        margin-left: 30px
+        @media (max-width: 1200px)
+          margin-left: 10px
+
+
+.c_menu
   a
     text-decoration: none
     color: $text_color
@@ -219,7 +236,7 @@ header
       +b_a
       left: 0
       top: 0
-      bottom: 0 
+      bottom: 0
       margin: auto
     &.email
       &:before
@@ -251,19 +268,6 @@ header
       @media (max-width: 1200px)
         font-size: 11px
 
-  ul
-    +flex
-    @media (max-width: 767px)
-      +wrap
-      width: 100%
-    li
-      @media (max-width: 767px)
-        width: 100%
-        text-align: center
-      + li
-        margin-left: 30px
-        @media (max-width: 1200px)
-          margin-left: 10px
 
 
 .nav_bar
@@ -684,3 +688,74 @@ main
             height: 9px
             +transition($transition_default)
             background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='21' height='9' viewBox='0 0 21 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.6938 0.943359L20.9137 4.50018L16.6938 8.05701L15.7271 6.91007L17.6964 5.25018H0V3.75018H17.6964L15.7271 2.0903L16.6938 0.943359Z' fill='white'/%3e%3c/svg%3e ")
+
+
+
+
+.slick-dots
+  li
+    padding: 0 7px
+    width: 30px
+    margin: 0
+    &.slick-active
+      button
+        background: #000000
+    button
+      width: 30px
+      height: 7px
+      background: #C4C4C4
+      +border-radius(5px)
+      &:hover
+        background: $red
+      &:before
+        display: none
+
+
+
+.main_h2
+  color: #312F30
+  font-size: 28px
+  line-height: 34px
+  font-weight: 600
+  font-family: $fira_sans
+  margin-bottom: 26px
+
+.main_excerpt
+  max-width: 545px
+  color: $text_color
+  font-size: 15px
+  line-height: 25px
+  font-family: $poppins
+  margin-bottom: 45px
+
+
+.slick-arrow
+  width: 40px
+  height: 40px
+  +border-radius(2px)
+  background: rgba(45, 33, 37, 0.45)
+  +transition($transition_default)
+  z-index: 2
+  &:hover, &:focus
+    background: $red
+  &:before
+    +b_a
+    +m_a
+    width: 10px
+    height: 18px
+
+.slick-next
+  right: -20px
+  &:before
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.292893 17.7071C-0.0976311 17.3166 -0.0976312 16.6834 0.292893 16.2929L7.58579 9L0.292893 1.70711C-0.0976318 1.31658 -0.0976319 0.683418 0.292892 0.292892C0.683417 -0.0976315 1.31658 -0.0976315 1.70711 0.292892L9.70711 8.29289C10.0976 8.68342 10.0976 9.31658 9.70711 9.70711L1.70711 17.7071C1.31658 18.0976 0.683418 18.0976 0.292893 17.7071Z' fill='%23EBEBEB'/%3e%3c/svg%3e ")
+.slick-prev
+  left: -20px
+  &:before
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.70711 0.292893C10.0976 0.683418 10.0976 1.31658 9.70711 1.70711L2.41421 9L9.70711 16.2929C10.0976 16.6834 10.0976 17.3166 9.70711 17.7071C9.31658 18.0976 8.68342 18.0976 8.29289 17.7071L0.292893 9.70711C-0.0976319 9.31658 -0.0976318 8.68342 0.292893 8.29289L8.29289 0.292893C8.68342 -0.0976312 9.31658 -0.0976311 9.70711 0.292893Z' fill='%23EBEBEB'/%3e%3c/svg%3e ")
+
+
+.works_list, .partners_list
+  .slick-slide
+    text-align: center
+    img
+      display: inline-block

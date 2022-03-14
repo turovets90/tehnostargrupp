@@ -1,0 +1,24 @@
+footer
+    .container
+        .flex_container
+            .col_left
+                ul.footer_menu
+                    for nav_item, index in nav
+                        li
+                            a(href="#")=nav_item
+                .row
+                    .col-12.col-md-8
+                        .copyright © 2021 - 2022 tehnostargrupp.by. Все права защищены.
+                        .dev Сайт разработан seologic.by
+                    .col-12.col-md-4
+                        a(href="#") Связаться с нами
+            .col_right
+                ul.c_menu
+                    li
+                        a.phone(href="tel:+375 44 708-90-90") +375 44 708-90-90 <span>(Минск)</span>
+                    li
+                        a.phone(href="tel:+375 29 662-19-98") +375 29 662-19-98 <span>(Борисов)</span>
+                    li
+                        span.location 222512, Минская обл., г.Борисов, ул. Р.Люксембург, 41-А, пом 1-1
+                    li
+                        a.email(href="mailto:tehnostargrupp@tut.by") tehnostargrupp@tut.by

@@ -47,6 +47,111 @@ $(document).ready(function(){
         $(this).toggleClass('act');
     });
 
+    if($('.works_list > div').length > 3){
+        $('.works_list').slick({
+            slidesToShow:3,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: true,
+            responsive: [
+
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 575,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    }else if($(window).innerWidth() < 575 && $('.works_list > div').length > 1){
+        $('.works_list').slick({
+            autoplay: false,
+            dots: true,
+            arrows: true,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        });
+    }else if($(window).innerWidth() < 991 && $('.works_list > div').length > 2){
+        $('.works_list').slick({
+            autoplay: false,
+            dots: true,
+            arrows: true,
+            slidesToShow: 2,
+            slidesToScroll: 1
+        });
+    }
+
+
+    if($('.partners_list > div').length > 6){
+        $('.partners_list').slick({
+            slidesToShow:6,
+            slidesToScroll: 1,
+            dots: false,
+            arrows: true,
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 5
+                    }
+                },
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 4
+                    }
+                },
+                {
+                    breakpoint: 575,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                }
+            ]
+        });
+    }else if($(window).innerWidth() < 575 && $('.partners_list > div').length > 2){
+        $('.partners_list').slick({
+            autoplay: false,
+            dots: false,
+            arrows: true,
+            slidesToShow: 2,
+            slidesToScroll: 1
+        });
+    }else if($(window).innerWidth() < 991 && $('.partners_list > div').length > 4){
+        $('.partners_list').slick({
+            autoplay: false,
+            dots: false,
+            arrows: true,
+            slidesToShow: 4,
+            slidesToScroll: 1
+        });
+    }else if($(window).innerWidth() < 1200 && $('.product_list_slider > div').length > 5){
+        $('.product_list_slider').slick({
+            autoplay: false,
+            dots: false,
+            arrows: true,
+            slidesToShow: 5,
+            slidesToScroll: 1
+        });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
     $(".main_slider").slick({
         infinite: true,
