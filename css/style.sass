@@ -175,7 +175,7 @@ ul
 
 
 body
-  background: #fff
+  background: #F8F8F8
   padding: 0
   margin: 0
   color: $text_color
@@ -500,6 +500,14 @@ header
     +box-shadow(1px 4px 15px rgba(49, 47, 48, 0.2))
     border: 0
     padding: 30px
+    @media (max-width: 1200px)
+      padding: 20px
+      transform: translate3d(0, 50px, 0px) !important
+    @media (max-width: 767px)
+      padding: 10px
+      transform: translate3d(0, 53px, 0px) !important
+    @media (max-width: 575px)
+      transform: translate3d(0, 50px, 0px) !important
     &:before
       +b_a
       width: 100%
@@ -521,6 +529,10 @@ header
   +flex
   +ai-center
   min-width: 372px
+  @media (max-width: 1200px)
+    min-width: 300px
+  @media (max-width: 767px)
+    min-width: 235px
   .form-control
     background: #EEEEEE
     +border-radius(2px 0 0 2px)
@@ -531,6 +543,8 @@ header
     color: $text_color
     font-size: 14px
     font-family: $rubik
+    @media (max-width: 767px)
+      padding-left: 10px
 
     &:hover, &:focus
       +box-shadow(none)
@@ -570,6 +584,103 @@ header
       height: 26px
       background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='23' height='26' viewBox='0 0 23 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M14.5792 14.9497H13.721L13.4168 14.6564C14.4814 13.418 15.1224 11.8102 15.1224 10.0612C15.1224 6.16124 11.9611 3 8.06118 3C4.16124 3 1 6.16124 1 10.0612C1 13.9611 4.16124 17.1224 8.06118 17.1224C9.81018 17.1224 11.418 16.4814 12.6564 15.4168L12.9497 15.721V16.5792L18.3814 22L20 20.3814L14.5792 14.9497ZM8.06118 14.9497C5.3562 14.9497 3.17267 12.7662 3.17267 10.0612C3.17267 7.3562 5.3562 5.17267 8.06118 5.17267C10.7662 5.17267 12.9497 7.3562 12.9497 10.0612C12.9497 12.7662 10.7662 14.9497 8.06118 14.9497Z' fill='white'/%3e%3c/svg%3e ")
 
+main
+  padding-top: 25px
 
+.m_catalog
+  +flex
+  margin-left: -3px
+  margin-right: -3px
+  +wrap
+  .m_catalog_item
+    padding: 0 3px
+    width: 33.33%
+    @media (max-width: 767px)
+      width: 100%
+    .m_catalog_item_link
+      +flex
+      +ai-end
+      padding: 35px
+      width: 100%
+      height: 282px
+      margin-bottom: 6px
+      text-decoration: none
+      position: relative
+      background-size: cover
+      background-position: center
+      @media (max-width: 1200px)
+        padding: 25px
+        height: 200px
+      @media (max-width: 767px)
+        height: 220px
+        padding: 15px
+      &:before
+        +b_a
+        width: 100%
+        height: 100%
+        background: linear-gradient(15.64deg, rgba(49, 47, 48, 0.6) -28.96%, rgba(49, 47, 48, 0) 92.07%)
+        left: 0
+        top: 0
+        +transition($transition_default)
+      &:hover, &:focus
+        text-decoration: none
+        &:before
+          opacity: 0
+        .m_catalog_item_content
+          .more
+            color: $red
+            &:after
+              background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='21' height='9' viewBox='0 0 21 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.6938 0.943359L20.9137 4.50018L16.6938 8.05701L15.7271 6.91007L17.6964 5.25018H0V3.75018H17.6964L15.7271 2.0903L16.6938 0.943359Z' fill='%23DB2C23'/%3e%3c/svg%3e ")
+      &.large
+        height: 570px
+        @media (max-width: 1200px)
+          height: 406px
+        @media (max-width: 767px)
+          height: 220px
+      .m_catalog_item_content
+        position: relative
 
+        .title
+          color: #fff
+          font-weight: 600
+          font-family: $fira_sans
+          font-size: 29px
+          line-height: 35px
+          margin-bottom: 20px
+          @media (max-width: 1200px)
+            font-size: 25px
+            line-height: 1.2
+            margin-bottom: 10px
+          @media (max-width: 767px)
+            font-size: 23px
+        .desc
+          color: #fff
+          font-size: 15px
+          line-height: 22px
+          font-family: $poppins
+          margin-bottom: 20px
+          @media (max-width: 1200px)
+            font-size: 14px
+            line-height: 1.2
+            margin-bottom: 10px
+        .more
+          display: inline-block
+          position: relative
+          text-transform: uppercase
+          color: #fff
+          font-size: 13px
+          font-weight: 600
+          font-family: $poppins
+          padding-right: 37px
+          +transition($transition_default)
 
+          &:after
+            +b_a
+            right: 0
+            top: 0
+            bottom: 0
+            margin: auto
+            width: 21px
+            height: 9px
+            +transition($transition_default)
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='21' height='9' viewBox='0 0 21 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.6938 0.943359L20.9137 4.50018L16.6938 8.05701L15.7271 6.91007L17.6964 5.25018H0V3.75018H17.6964L15.7271 2.0903L16.6938 0.943359Z' fill='white'/%3e%3c/svg%3e ")

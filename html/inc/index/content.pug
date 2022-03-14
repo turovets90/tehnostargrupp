@@ -1,0 +1,23 @@
+-var m_cat=['Защитные конструкции','Алюминиевые перегородки'];
+-var m_cat2=['Сейфовые комнаты','Офисная мебель'];
+main
+    .container
+        .m_catalog
+            for mcat_item, index in m_cat
+                .m_catalog_item
+                    a.m_catalog_item_link.large(href="#" style="background-image:url("+dir+"pr.png)")
+                        .m_catalog_item_content
+                            .title=mcat_item
+                            if index===0
+                                .desc Являемся одним из ведущих производителей защитных конструкций
+                            .more Подробнее
+            .m_catalog_item
+                for mcat_item2, index in m_cat2
+                    a.m_catalog_item_link(href="#" style="background-image:url(" + dir + "pr.png)")
+                        .m_catalog_item_content
+                            .title=mcat_item2
+                            .more Подробнее
+
+
+
+
