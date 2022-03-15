@@ -222,6 +222,26 @@ header
 
 
 .c_menu
+  .location
+    color: $text_color
+    position: relative
+    font-size: 14px
+    font-family: $rubik
+    font-weight: 400
+    padding-left: 22px
+    display: inline-block
+    @media (max-width: 1200px)
+      font-size: 12px
+    &:before
+      +b_a
+      left: 0
+      top: 5px
+      margin: auto
+      width: 9px
+      height: 13px
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='9' height='13' viewBox='0 0 9 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4.5 0C2.01214 0 0 2.0345 0 4.55C0 7.9625 4.5 13 4.5 13C4.5 13 9 7.9625 9 4.55C9 2.0345 6.98786 0 4.5 0ZM4.5 6.175C3.61286 6.175 2.89286 5.447 2.89286 4.55C2.89286 3.653 3.61286 2.925 4.5 2.925C5.38714 2.925 6.10714 3.653 6.10714 4.55C6.10714 5.447 5.38714 6.175 4.5 6.175Z' fill='%23312F30'/%3e%3c/svg%3e ")
+
+
   a
     text-decoration: none
     color: $text_color
@@ -693,10 +713,13 @@ main
 
 
 .slick-dots
+  bottom: -40px
+  @media (max-width: 1200px)
+    bottom: -30px
   li
-    padding: 0 7px
     width: 30px
-    margin: 0
+    height: auto
+    margin: 0 7px
     &.slick-active
       button
         background: #000000
@@ -705,6 +728,7 @@ main
       height: 7px
       background: #C4C4C4
       +border-radius(5px)
+      padding: 0
       &:hover
         background: $red
       &:before
@@ -719,6 +743,15 @@ main
   font-weight: 600
   font-family: $fira_sans
   margin-bottom: 26px
+  padding-top: 70px
+  @media (max-width: 1200px)
+    font-size: 26px
+    line-height: 1.2
+    margin-bottom: 15px
+    padding-top: 50px
+  @media (max-width: 767px)
+    padding-top: 30px
+    font-size: 24px
 
 .main_excerpt
   max-width: 545px
@@ -727,6 +760,11 @@ main
   line-height: 25px
   font-family: $poppins
   margin-bottom: 45px
+  @media (max-width: 1200px)
+    margin-bottom: 35px
+  @media (max-width: 767px)
+    margin-bottom: 25px
+
 
 
 .slick-arrow
@@ -746,10 +784,14 @@ main
 
 .slick-next
   right: -20px
+  @media (max-width: 1300px)
+    right: -10px
   &:before
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.292893 17.7071C-0.0976311 17.3166 -0.0976312 16.6834 0.292893 16.2929L7.58579 9L0.292893 1.70711C-0.0976318 1.31658 -0.0976319 0.683418 0.292892 0.292892C0.683417 -0.0976315 1.31658 -0.0976315 1.70711 0.292892L9.70711 8.29289C10.0976 8.68342 10.0976 9.31658 9.70711 9.70711L1.70711 17.7071C1.31658 18.0976 0.683418 18.0976 0.292893 17.7071Z' fill='%23EBEBEB'/%3e%3c/svg%3e ")
 .slick-prev
   left: -20px
+  @media (max-width: 1300px)
+    left: -10px
   &:before
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.70711 0.292893C10.0976 0.683418 10.0976 1.31658 9.70711 1.70711L2.41421 9L9.70711 16.2929C10.0976 16.6834 10.0976 17.3166 9.70711 17.7071C9.31658 18.0976 8.68342 18.0976 8.29289 17.7071L0.292893 9.70711C-0.0976319 9.31658 -0.0976318 8.68342 0.292893 8.29289L8.29289 0.292893C8.68342 -0.0976312 9.31658 -0.0976311 9.70711 0.292893Z' fill='%23EBEBEB'/%3e%3c/svg%3e ")
 
@@ -759,3 +801,261 @@ main
     text-align: center
     img
       display: inline-block
+
+.main_works
+  padding-bottom: 45px
+
+
+.main_form_box
+  +border-radius(5px)
+  background: url(../img/mf_bg.png)
+  background-position: center
+  background-size: cover
+  color: #fff
+  min-height: 290px
+  +flex
+  +ai-center
+  padding: 30px 115px
+  @media (max-width: 1300px)
+    padding: 30px 50px
+  @media (max-width: 991px)
+    padding: 20px 30px
+  @media (max-width: 767px)
+    padding: 20px 15px
+  .flex_container
+    width: 100%
+    margin: 0 -15px
+    > div
+      padding: 0 15px
+    .col_left
+      width: 40%
+      @media (max-width: 767px)
+        width: 100%
+        margin-bottom: 30px
+    .col_right
+      width: 60%
+      padding-right: 0
+      @media (max-width: 767px)
+        width: 100%
+
+  .title
+    color: #fff
+    font-size: 38px
+    line-height: 46px
+    font-weight: 600
+    font-family: $fira_sans
+    margin-bottom: 25px
+    @media (max-width: 1200px)
+      font-size: 35px
+      line-height: 1.2
+    @media (max-width: 991px)
+      font-size: 30px
+
+  .subtitle
+    color: #D2C6C6
+    font-size: 15px
+    line-height: 25px
+    font-family: $poppins
+
+.j_end
+  +flex
+  +j-end
+
+.field
+  margin-bottom: 22px
+
+.form-control
+  height: 45px
+  width: 100%
+  background: #EEEEEE
+  +border-radius(2px)
+  border: 0
+  padding-left: 15px
+  color: #585858
+  font-size: 14px
+  font-family: $rubik
+  &:hover, &:focus
+    +box-shadow(none)
+    border: 0
+    outline: none
+  &::-webkit-input-placeholder
+    color: #585858
+    font-size: 14px
+    font-family: $rubik
+  &::-ms-input-placeholder
+    color: #585858
+    font-size: 14px
+    font-family: $rubik
+  &::-moz-placeholder
+    color: #585858
+    font-size: 14px
+    font-family: $rubik
+  &:-ms-input-placeholder
+    color: #585858
+    font-size: 14px
+    font-family: $rubik
+  &:-moz-placeholder
+    color: #585858
+    font-size: 14px
+    font-family: $rubik
+
+
+.btn_default
+  background: $red
+  +border-radius(2px)
+  color: #fff
+  border: 0
+  width: 100%
+  height: 45px
+  +flex
+  +ai-center
+  +j-center
+  font-weight: 500
+  font-size: 14px
+  text-transform: uppercase
+  font-family: $rubik
+
+
+.main_partners
+  padding-bottom: 80px
+
+
+.main_seotext
+  padding-bottom: 65px
+  @media (max-width: 1200px)
+    padding-bottom: 45px
+  @media (max-width: 991px)
+    padding-bottom: 30px
+  .desc
+    color: #585858
+    font-size: 15px
+    line-height: 25px
+    font-weight: 500
+    font-family: $poppins
+    *
+      font-family: $poppins
+    ul
+      padding-left: 8px
+      li
+        margin-bottom: 20px
+        position: relative
+        padding-left: 10px
+        &:before
+          +b_a
+          width: 4px
+          height: 4px
+          background: #585858
+          +border-radius(50%)
+          left: 0
+          top: 10px
+
+
+.f_feedback
+  +flex
+  +ai-center
+  +j-center
+  text-decoration: none
+  width: 100%
+  max-width: 204px
+  height: 45px
+  border: 2px solid #DB2C23
+  +border-radius(2px)
+  color: #DB2C23
+  font-weight: 500
+  font-size: 14px
+  font-family: $rubik
+  @media (max-width: 1024px)
+    margin-bottom: 20px
+
+  &:hover, &:focus
+    text-decoration: none
+    background: $red
+    color: #fff
+
+footer
+  background: #EFEFEF
+  padding: 75px 0
+  @media (max-width: 1200px)
+    padding: 60px 0
+  @media (max-width: 991px)
+    padding: 40px 0
+  @media (max-width: 767px)
+    padding: 30px 0
+  .flex_container
+    +j-beetween
+    .col_left
+      width: 76%
+      padding-right: 30px
+      @media (min-width: 1401px)
+        max-width: 66.5%
+        padding-right: 0
+      @media (max-width: 1024px)
+        width: 100%
+    .col_right
+      width: 24%
+      @media (max-width: 1024px)
+        width: 100%
+
+
+
+  .c_menu
+    @media (max-width: 1024px)
+      margin-bottom: 30px
+  .footer_menu
+    +flex
+    +ai-center
+    +wrap
+    width: 100%
+    margin-bottom: 50px
+    @media (min-width: 1401px)
+      +j-beetween
+    @media (max-width: 1024px)
+      margin-bottom: 30px
+    li
+      margin-right: 33px
+      &:last-child
+        margin-left: 0
+      @media (max-width: 575px)
+        width: 100%
+      a
+        color: #312F30
+        font-size: 15px
+        font-family: $roboto
+        text-decoration: none
+        &:hover
+          text-decoration: none
+          color: $red
+  .fj_end
+    @media (min-width: 1025px)
+      +flex
+      +j-end
+      +ai-center
+
+
+.col_mb
+  @media (min-width: 1025px)
+    display: none
+.col_xl
+  @media (max-width: 1024px)
+    display: none
+
+.copyright
+  color: #585858
+  font-size: 14px
+  font-family: $rubik
+  font-weight: 300
+  margin-bottom: 30px
+  @media (max-width: 1024px)
+    margin-bottom: 5px
+
+.dev
+  color: #585858
+  font-size: 14px
+  font-family: $rubik
+  font-weight: 300
+  a
+    text-decoration: underline
+    color: #585858
+    &:hover, &:focus
+      text-decoration: none
+      color: $red
