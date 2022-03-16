@@ -1,3 +1,4 @@
+@import "fancybox"
 @import "slick-less"
 @import "bootstrap"
 
@@ -720,6 +721,9 @@ main
     width: 30px
     height: auto
     margin: 0 7px
+    padding-left: 0
+    &:before
+      display: none
     &.slick-active
       button
         background: #000000
@@ -801,7 +805,9 @@ main
     text-align: center
     img
       display: inline-block
-
+.works_list
+  .works_list_item
+    padding: 0 3px
 .main_works
   padding-bottom: 45px
 
@@ -1059,3 +1065,280 @@ footer
     &:hover, &:focus
       text-decoration: none
       color: $red
+
+
+.page_content_header
+  width: 100%
+  max-width: 1464px
+  margin: auto
+  background: url(../img/crumb_bg.png)
+  background-size: cover
+  background-position: center
+  padding: 45px 0
+
+.breadcrumb
+  +flex
+  +ai-center
+  background: none
+  padding: 0
+  margin: 0 0 25px
+  border: 1px solid #DBDBDB
+  li
+    position: relative
+    padding: 0 22px
+    background: #fff
+    height: 45px
+    +flex
+    +ai-center
+
+    &:first-child
+      padding-left: 22px
+
+    + li
+      &:before
+        +b_a
+        left: -3px
+        top: 0
+        bottom: 0
+        margin: auto
+        width: 6px
+        height: 7px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='6' height='7' viewBox='0 0 6 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1L4 3.5L1 6' stroke='%237E7E7E' stroke-width='1.5'/%3e%3c/svg%3e ")
+
+    &:last-child
+      //background: none
+
+
+      &:before
+        background: none
+        width: 0
+        height: 0
+        top: 0
+        left: initial
+        bottom: initial
+        right: -19px
+        border-left: 22px solid #312f30
+        border-top: 22px solid transparent
+        border-bottom: 22px solid transparent
+      &:after
+        +b_a
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='207' height='45' viewBox='0 0 207 45' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 0H190L207 21.7241L190 45H0L17 22L0 0Z' fill='%23312F30'/%3e%3c/svg%3e ")
+      a
+        position: relative
+        color: #9E9E9E
+        z-index: 2
+        padding-left: 17px
+
+
+
+
+    a
+      color: #312F30
+      font-size: 13px
+      font-family: $rubik
+      text-decoration: none
+
+
+      &:hover, &:focus
+        text-decoration: none
+      &.home
+        +flex
+
+
+
+.page_title
+  color: #312F30
+  font-size: 29px
+  line-height: 35px
+  font-weight: 600
+  font-family: $fira_sans
+  margin-bottom: 43px
+
+
+.page_content
+  background: #fff
+  margin-top: -45px
+  position: relative
+  padding: 45px 35px
+  margin-bottom: 80px
+  .flex_container
+
+    .aside
+      width: 283px
+    .content
+      width: calc(100% - 283px)
+      padding-left: 22px
+
+.sidebar_menu
+  .menu
+    > li
+      position: relative
+      border-bottom: 1px solid #DBDBDB
+      &.active
+        border-bottom: 0
+      .arrow
+        position: absolute
+        top: 18px
+        //bottom: 0
+        right: 0
+        margin: auto
+        width: 30px
+        height: 30px
+        cursor: pointer
+        &:before
+          +b_a
+          right: 0
+          top: 0
+          bottom: 0
+          margin: auto
+          width: 13px
+          height: 8px
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='8' viewBox='0 0 13 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12 1L6.5 6L1 1' stroke='%232D2125' stroke-width='1.5'/%3e%3c/svg%3e ")
+      &:first-child
+        border-top: 1px solid #DBDBDB
+      > a
+        color: #2D2125
+
+        font-size: 18px
+        line-height: 24px
+        font-family: $rubik
+        text-decoration: none
+        width: 100%
+        display: inline-block
+        padding: 20px 0
+        &:hover, &:focus
+          text-decoration: none
+
+      .sub-menu
+        display: none
+        position: relative
+        background: #F8F8F8
+
+        &:before
+          +b_a
+          left: 0
+          top: 0
+          width: 100%
+          height: 4px
+          background: $red
+        &:after
+          +b_a
+          left: 0
+          right: 0
+          margin: auto
+          top: 4px
+          width: 0
+          height: 0
+          border-top: 8px solid $red
+          border-right: 8px solid transparent
+          border-left: 8px solid transparent
+
+        li
+          border-bottom: 1px solid #DBDBDB
+          &:last-child
+            border-bottom: 0
+          &.active
+            a
+              background: $red
+              color: #fff
+
+          a
+            color: #312F30
+            font-size: 16px
+            font-family: $rubik
+            text-decoration: none
+            display: inline-block
+            width: 100%
+            padding: 20px 20px 20px 25px
+            &:hover, &:focus
+              text-decoration: none
+              background: $red
+              color: #fff
+
+
+.content
+  color: #585858
+  font-family: $poppins
+  font-size: 15px
+  line-height: 25px
+  h2, .h2
+    color: #312F30
+    font-weight: 600
+    font-size: 22px
+    line-height: 26px
+    font-family: $fira_sans
+    padding-top: 35px
+    margin-bottom: 25px
+
+  .works_list
+    padding-bottom: 50px
+    margin-bottom: 65px
+
+  ul
+    padding-left: 8px
+    margin-bottom: 45px
+    li
+      //margin-bottom: 20px
+      position: relative
+      padding-left: 10px
+      &:before
+        +b_a
+        width: 4px
+        height: 4px
+        background: #585858
+        +border-radius(50%)
+        left: 0
+        top: 10px
+
+
+a[data-fancybox="gallery"]
+  position: relative
+  display: inline-block
+  &:hover
+    &:before
+      opacity: 1
+  &:before
+    +b_a
+    +m_a
+    width: 45px
+    height: 45px
+    pointer-events: none
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='45' height='45' viewBox='0 0 45 45' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M29.0625 26.25H27.5813L27.0563 25.7437C28.8938 23.6063 30 20.8313 30 17.8125C30 11.0813 24.5438 5.625 17.8125 5.625C11.0813 5.625 5.625 11.0813 5.625 17.8125C5.625 24.5438 11.0813 30 17.8125 30C20.8313 30 23.6063 28.8938 25.7437 27.0563L26.25 27.5813V29.0625L35.625 38.4188L38.4188 35.625L29.0625 26.25ZM17.8125 26.25C13.1438 26.25 9.375 22.4813 9.375 17.8125C9.375 13.1438 13.1438 9.375 17.8125 9.375C22.4813 9.375 26.25 13.1438 26.25 17.8125C26.25 22.4813 22.4813 26.25 17.8125 26.25Z' fill='%23EBEBEB'/%3e%3cpath d='M22.5 18.75H18.75V22.5H16.875V18.75H13.125V16.875H16.875V13.125H18.75V16.875H22.5V18.75Z' fill='%23EBEBEB'/%3e%3c/svg%3e ")
+    +transition($transition_default)
+    opacity: 0
+
+
+.product_feedback_box
+  background: url(../img/pr_bg.png)
+  background-size: cover
+  background-position: center
+  padding: 80px
+  +border-radius(5px)
+  margin-bottom: 35px
+  .col_left
+    width: 70%
+    .title
+      color: #fff
+      font-size: 22px
+      line-height: 22px
+      font-weight: 600
+      font-family: $fira_sans
+      margin-bottom: 30px
+
+    .subtitle
+      color: #D2C6C6
+      font-family: $poppins
+      font-size: 15px
+      line-height: 25px
+
+  .col_right
+    width: 30%
+    +flex
+    +ai-end
+    +j-end
+    .btn_default
+      max-width: 204px

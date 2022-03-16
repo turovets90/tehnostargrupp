@@ -40,11 +40,12 @@ $(document).ready(function(){
     });
 
     var arrow='<span class="arrow"></span>';
-    $('.main_menu .sub_menu').before(arrow);
+    $('.menu .sub-menu').before(arrow);
 
-    $('.main_menu .arrow').click(function(){
+    $('.menu .arrow').click(function(){
         $(this).next().slideToggle();
         $(this).toggleClass('act');
+        $(this).parent().toggleClass('active');
     });
 
     if($('.works_list > div').length > 3){
