@@ -1075,14 +1075,28 @@ footer
   background-size: cover
   background-position: center
   padding: 45px 0
+  @media (max-width: 1200px)
+    padding: 30px 0
+  @media (max-width: 767px)
+    padding: 15px 0
 
-.breadcrumb
+
+.breadcrumb_list
   +flex
   +ai-center
   background: none
   padding: 0
-  margin: 0 0 25px
   border: 1px solid #DBDBDB
+  overflow: auto
+  margin: 0 0 25px
+  &::-webkit-scrollbar
+    width: 3px
+    height: 3px
+    background:  #c6c8ca
+  &::-webkit-scrollbar-thumb:horizontal
+    background:  $red
+    @include border-radius(4px)
+
   li
     position: relative
     padding: 0 22px
@@ -1091,8 +1105,14 @@ footer
     +flex
     +ai-center
 
+    @media (max-width: 1200px)
+      height: 30px
+      padding: 0 10px
+
     &:first-child
       padding-left: 22px
+      @media (max-width: 1200px)
+        padding-left: 10px
 
     + li
       &:before
@@ -1105,10 +1125,10 @@ footer
         height: 7px
         background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='6' height='7' viewBox='0 0 6 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1L4 3.5L1 6' stroke='%237E7E7E' stroke-width='1.5'/%3e%3c/svg%3e ")
 
+
+
     &:last-child
       //background: none
-
-
       &:before
         background: none
         width: 0
@@ -1120,6 +1140,8 @@ footer
         border-left: 22px solid #312f30
         border-top: 22px solid transparent
         border-bottom: 22px solid transparent
+        @media (max-width: 1200px)
+          display: none
       &:after
         +b_a
         left: 0
@@ -1127,11 +1149,20 @@ footer
         width: 100%
         height: 100%
         background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='207' height='45' viewBox='0 0 207 45' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 0H190L207 21.7241L190 45H0L17 22L0 0Z' fill='%23312F30'/%3e%3c/svg%3e ")
+        @media (max-width: 1200px)
+          left: -10px
+          right: -13px
+          width: auto
+          border-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='207' height='45' viewBox='0 0 207 45' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 0H190L207 21.7241L190 45H0L17 22L0 0Z' fill='%23312F30'/%3e%3c/svg%3e ") 0 fill stretch
+          background: none
+
       a
         position: relative
         color: #9E9E9E
         z-index: 2
         padding-left: 17px
+        @media (max-width: 1200px)
+          padding-left: 0
 
 
 
@@ -1141,6 +1172,7 @@ footer
       font-size: 13px
       font-family: $rubik
       text-decoration: none
+      white-space: nowrap
 
 
       &:hover, &:focus
@@ -1157,6 +1189,12 @@ footer
   font-weight: 600
   font-family: $fira_sans
   margin-bottom: 43px
+  @media (max-width: 1200px)
+    font-size: 27px
+    line-height: 1.2
+    margin-bottom: 30px
+  @media (max-width: 767px)
+    font-size: 25px
 
 
 .page_content
@@ -1165,13 +1203,26 @@ footer
   position: relative
   padding: 45px 35px
   margin-bottom: 80px
+  @media (max-width: 1200px)
+    margin-bottom: 50px
+    padding: 30px 25px
+    margin-top: -40px
+  @media (max-width: 767px)
+    margin-top: -30px
+    padding: 20px 15px
   .flex_container
 
     .aside
       width: 283px
+      @media (max-width: 991px)
+        width: 100%
+        margin-bottom: 20px
     .content
       width: calc(100% - 283px)
       padding-left: 22px
+      @media (max-width: 991px)
+        width: 100%
+        padding-left: 0
 
 .sidebar_menu
   .menu
@@ -1189,6 +1240,8 @@ footer
         width: 30px
         height: 30px
         cursor: pointer
+        @media (max-width: 1200px)
+          top: 8px
         &:before
           +b_a
           right: 0
@@ -1210,6 +1263,9 @@ footer
         width: 100%
         display: inline-block
         padding: 20px 0
+        @media (max-width: 1200px)
+          padding: 10px 0
+          font-size: 16px
         &:hover, &:focus
           text-decoration: none
 
@@ -1254,6 +1310,9 @@ footer
             display: inline-block
             width: 100%
             padding: 20px 20px 20px 25px
+            @media (max-width: 1200px)
+              padding: 10px 10px 10px 15px
+              font-size: 14px
             &:hover, &:focus
               text-decoration: none
               background: $red
@@ -1273,14 +1332,27 @@ footer
     font-family: $fira_sans
     padding-top: 35px
     margin-bottom: 25px
+    @media (max-width: 1200px)
+      padding-top: 20px
+      margin-bottom: 20px
 
   .works_list
     padding-bottom: 50px
     margin-bottom: 65px
+    @media (max-width: 1200px)
+      padding-bottom: 30px
+
+    @media (max-width: 767px)
+      padding-bottom: 20px
+
 
   ul
     padding-left: 8px
     margin-bottom: 45px
+    @media (max-width: 1200px)
+      margin-bottom: 30px
+    @media (max-width: 767px)
+      margin-bottom: 10px
     li
       //margin-bottom: 20px
       position: relative
@@ -1319,8 +1391,17 @@ a[data-fancybox="gallery"]
   padding: 80px
   +border-radius(5px)
   margin-bottom: 35px
+  @media (max-width: 1200px)
+    padding: 30px
+    margin-bottom: 20px
+  @media (max-width: 767px)
+    padding: 20px 15px
+    margin-bottom: 0
   .col_left
     width: 70%
+    @media (max-width: 767px)
+      width: 100%
+      margin-bottom: 20px
     .title
       color: #fff
       font-size: 22px
@@ -1328,17 +1409,29 @@ a[data-fancybox="gallery"]
       font-weight: 600
       font-family: $fira_sans
       margin-bottom: 30px
+      @media (max-width: 1200px)
+        font-size: 20px
+        line-height: 1.2
+        margin-bottom: 20px
 
     .subtitle
       color: #D2C6C6
       font-family: $poppins
       font-size: 15px
       line-height: 25px
+      @media (max-width: 1200px)
+        font-size: 14px
+        line-height: 1.2
 
   .col_right
     width: 30%
     +flex
     +ai-end
     +j-end
+    @media (max-width: 767px)
+      width: 100%
+
     .btn_default
       max-width: 204px
+      @media (max-width: 767px)
+        max-width: 100%
