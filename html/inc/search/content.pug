@@ -1,0 +1,39 @@
+.page_content_header
+    .container
+        .breadcrumb_scroll_block
+            ul.breadcrumb_list
+                li
+                    a.home(href="#")
+                        <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.75 15.5V10.25H11.25V15.5H15.625V8.5H18.25L9.5 0.625L0.75 8.5H3.375V15.5H7.75Z" fill="#312F30"/>
+                        </svg>
+
+                li
+                    a(href="#") Главная
+                li
+                    a(href="#") Поиск
+
+
+        h1.page_title Поиск
+
+.container
+    .page_content
+
+        .content
+            form.search_form
+                input.form-control(type="text" placeholder="Введите ваш запрос")
+                button.search_form_btn(type="submit")
+
+            .result_count Найдено: 2
+            -var res1=['Пункты обмена валют','Расчетно-кассовые центры'];
+            -var res2=['Лотки передаточные используются в пунктах обмена валюты, кассовых кабинах, передаточных узлах, пунктах продажи билетов на вокзалах, в кассах кинотеатров, автовокзалах, железнодорожных кассах, кассах ломбардов и предназначены для передачи документов, денег или других материальных...','Расчетно-кассовый центр (РКЦ) выполняет посреднические функции, обеспечивая взаиморасчеты между финансовыми учреждениями, выдает кредиты, ипроводит кассовое обслуживание и обмен валют...'];
+            .results
+                for res_item, index in res1
+                    .results_item
+                        a.title(href="#")=res_item
+                        .excerpt=res2[index]
+
+
+
+
+
