@@ -22,7 +22,7 @@
             <ul class="c_menu">
               <li><a class="phone" href="tel:+375 44 708-90-90">+375 44 708-90-90 <span>(Минск)</span></a></li>
               <li><a class="phone" href="tel:+375 29 662-19-98">+375 29 662-19-98 <span>(Борисов)</span></a></li>
-              <li><a class="feedback" href="#">Связаться с нами</a></li>
+              <li><a class="feedback" href="#feedback" data-toggle="modal">Связаться с нами</a></li>
             </ul>
           </div>
         </div>
@@ -74,7 +74,7 @@
                   </div>
                 </div>
               </li>
-              <li class="d-none"><a href="#">Связаться с нами</a></li>
+              <li class="d-none"><a href="#feedback" data-toggle="modal">Связаться с нами</a></li>
               <li class="mm_btn">
                 <button class="hamburger"><span></span><span></span><span></span></button>
               </li>
@@ -246,6 +246,38 @@
         </div>
       </div>
     </footer>
+    <div class="modal fade" id="feedback" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button class="close" data-dismiss="modal" aria-label="Close"></button>
+            <div class="form_box">
+              <div class="title">Остались вопросы?</div>
+              <div class="sub_title">Заполните форму и мы рассчитаем стоимость заказа</div>
+              <form>
+                <div class="c_form">
+                  <div class="field">
+                    <input class="form-control" type="text" placeholder="Ваше имя*"/>
+                  </div>
+                  <div class="field">
+                    <input class="form-control" type="text" placeholder="Телефон*"/>
+                  </div>
+                  <div class="field">
+                    <input class="form-control" type="text" placeholder="E-mail*"/>
+                  </div>
+                  <div class="field">
+                    <textarea class="form-control" placeholder="Сообщение"></textarea>
+                  </div>
+                  <div class="field">
+                    <button class="btn_default" type="submit">Отправить</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="../js/jquery.fancybox.min.js"></script>

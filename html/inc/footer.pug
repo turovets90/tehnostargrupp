@@ -26,3 +26,26 @@ footer
                 .col_mb
                     .copyright © 2021 - 2022 tehnostargrupp.by. Все права защищены.
                     .dev Сайт разработан <a href="">seologic.by</a>
+
+
+
+.modal.fade#feedback(role="dialog" aria-labelledby="modalLabel" aria-hidden="true")
+    .modal-dialog
+        .modal-content
+            .modal-body
+                button.close(data-dismiss="modal" aria-label="Close")
+                .form_box
+                    .title Остались вопросы?
+                    .sub_title Заполните форму и мы рассчитаем стоимость заказа
+                    form
+                        .c_form
+                            .field
+                                input.form-control(type="text" placeholder="Ваше имя*")
+                            .field
+                                input.form-control(type="text" placeholder="Телефон*")
+                            .field
+                                input.form-control(type="text" placeholder="E-mail*")
+                            .field
+                                textarea.form-control(placeholder="Сообщение")
+                            .field
+                                button.btn_default(type="submit") Отправить
