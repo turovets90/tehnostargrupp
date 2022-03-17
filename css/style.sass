@@ -190,6 +190,13 @@ header
   width: 100%
   max-width: 1464px
   margin: auto
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+
+  background: #fff
+  z-index: 999
 .container
   width: 100%
   max-width: 1374px
@@ -201,9 +208,10 @@ header
   +flex
   +ai-center
   +j-beetween
-  padding: 8px 0
+  padding: 10px 0
   @media (max-width: 767px)
     +wrap
+    padding: 5px 0
     > div
       width: 100%
 
@@ -284,7 +292,7 @@ header
       color: $red
       font-weight: 500
       padding-left: 0
-      padding-bottom: 2px
+      //padding-bottom: 2px
       border-bottom: 2px dashed #DB2C23
 
 
@@ -620,12 +628,16 @@ header
       background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='23' height='26' viewBox='0 0 23 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M14.5792 14.9497H13.721L13.4168 14.6564C14.4814 13.418 15.1224 11.8102 15.1224 10.0612C15.1224 6.16124 11.9611 3 8.06118 3C4.16124 3 1 6.16124 1 10.0612C1 13.9611 4.16124 17.1224 8.06118 17.1224C9.81018 17.1224 11.418 16.4814 12.6564 15.4168L12.9497 15.721V16.5792L18.3814 22L20 20.3814L14.5792 14.9497ZM8.06118 14.9497C5.3562 14.9497 3.17267 12.7662 3.17267 10.0612C3.17267 7.3562 5.3562 5.17267 8.06118 5.17267C10.7662 5.17267 12.9497 7.3562 12.9497 10.0612C12.9497 12.7662 10.7662 14.9497 8.06118 14.9497Z' fill='white'/%3e%3c/svg%3e ")
 
 main
-  padding-top: 25px
+  margin-top: 132px
+  @media (max-width: 575px)
+    margin-top: 192px
+
 
 .m_catalog
   +flex
   margin-left: -3px
   margin-right: -3px
+  padding-top: 25px
   +wrap
   .m_catalog_item
     padding: 0 3px
@@ -804,13 +816,13 @@ main
 
 .slick-next
   right: -20px
-  @media (max-width: 1300px)
+  @media (max-width: 1400px)
     right: -10px
   &:before
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.292893 17.7071C-0.0976311 17.3166 -0.0976312 16.6834 0.292893 16.2929L7.58579 9L0.292893 1.70711C-0.0976318 1.31658 -0.0976319 0.683418 0.292892 0.292892C0.683417 -0.0976315 1.31658 -0.0976315 1.70711 0.292892L9.70711 8.29289C10.0976 8.68342 10.0976 9.31658 9.70711 9.70711L1.70711 17.7071C1.31658 18.0976 0.683418 18.0976 0.292893 17.7071Z' fill='%23EBEBEB'/%3e%3c/svg%3e ")
 .slick-prev
   left: -20px
-  @media (max-width: 1300px)
+  @media (max-width: 1400px)
     left: -10px
   &:before
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.70711 0.292893C10.0976 0.683418 10.0976 1.31658 9.70711 1.70711L2.41421 9L9.70711 16.2929C10.0976 16.6834 10.0976 17.3166 9.70711 17.7071C9.31658 18.0976 8.68342 18.0976 8.29289 17.7071L0.292893 9.70711C-0.0976319 9.31658 -0.0976318 8.68342 0.292893 8.29289L8.29289 0.292893C8.68342 -0.0976312 9.31658 -0.0976311 9.70711 0.292893Z' fill='%23EBEBEB'/%3e%3c/svg%3e ")
@@ -927,7 +939,6 @@ textarea.form-control
   background: $red
   +border-radius(2px)
   color: #fff
-  border: 0
   width: 100%
   height: 45px
   +flex
@@ -937,6 +948,10 @@ textarea.form-control
   font-size: 14px
   text-transform: uppercase
   font-family: $rubik
+  border: 2px solid $red
+  &:hover, &:focus
+    background: #fff
+    color: $red
 
 
 .main_partners
@@ -1024,6 +1039,8 @@ footer
   .c_menu
     @media (max-width: 1024px)
       margin-bottom: 30px
+    li
+      margin-bottom: 10px
   .footer_menu
     +flex
     +ai-center
@@ -1190,6 +1207,9 @@ footer
       font-family: $rubik
       text-decoration: none
       white-space: nowrap
+      &.home
+        svg
+          margin-top: -3px
 
 
       &:hover, &:focus
@@ -1694,9 +1714,15 @@ a[data-fancybox="gallery"]
     background: #fff
     width: 60px
     height: 60px
-    opacity: 1
     +border-radius(50%)
     z-index: 2
+    opacity: 1 !important
+    &:hover, &:focus
+      background: $red
+      opacity: 1
+      border: 1px solid $red
+      &:before, &:after
+        background: #fff
     @media (max-width: 1200px)
       width: 40px
       height: 40px
@@ -1784,3 +1810,7 @@ a[data-fancybox="gallery"]
     .excerpt
       color: #585858
       font-family: $poppins
+
+
+
+
