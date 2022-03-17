@@ -1,0 +1,37 @@
+.page_content_header
+    .container
+        .breadcrumb_scroll_block
+            ul.breadcrumb_list
+                li
+                    a.home(href="#")
+                        <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.75 15.5V10.25H11.25V15.5H15.625V8.5H18.25L9.5 0.625L0.75 8.5H3.375V15.5H7.75Z" fill="#312F30"/>
+                        </svg>
+
+                li
+                    a(href="#") Главная
+                li
+                    a(href="#") Изделия
+
+
+        h1.page_title Передаточные лотки
+
+.container
+    .page_content
+
+        .content
+            p.mb-5 Мы занимаемся серийным производством сертифицированных изделий <br>выполняемых в соответствии с техническими заданиями Заказчиков
+            -var cat=['','Защитные конструкции','Алюминиевые перегородки','Офисная мебель']
+            .row.category_row
+                -for(var c=1;c<=3;c++)
+                    .col-12.col-sm-6.col-xl-4.item
+                        .category_item
+                            picture
+                                img.img_thumbnail(src=dir+'/cat/c_'+c+".png")
+                                span.icon
+                                    img(src=dir+"/cat/"+c+".svg")
+                            .category_name=cat[c]
+                            a.more(href="#") Подробнее
+
+
+
