@@ -1,0 +1,55 @@
+.page_content_header
+    .container
+        .breadcrumb_scroll_block
+            ul.breadcrumb_list
+                li
+                    a.home(href="#")
+                        <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.75 15.5V10.25H11.25V15.5H15.625V8.5H18.25L9.5 0.625L0.75 8.5H3.375V15.5H7.75Z" fill="#312F30"/>
+                        </svg>
+
+                li
+                    a(href="#") Главная
+                li
+                    a(href="#") Контакты
+
+
+        h1.page_title Контакты
+
+.container
+    .page_content
+
+        .content
+            .map
+                img(src=dir+'map.png')
+
+            .contacts_form_row
+                .col_left
+                    ul.c_list
+                        li.tel
+                            a(href="#") +375 44 708-90-90 (Минск)
+                        li.tel
+                            a(href="") +375 29 662-19-98 (Борисов)
+                        li <strong>Наша почта:</strong> <a href="mailto:tehnostargrupp@tut.by">tehnostargrupp@tut.by</a>
+                        li <strong>Наш адрес:</strong> 222512, Минская обл., г.Борисов, <br>ул. Р.Люксембург, 41-А, пом 1-1
+                        li.c_desc Приоритетное направление деятельности фирмы — изготовление, продажа и установка оборудования для банков и офисов: Расчетно-кассовые центры, пункты обмена валют, кассовые кабины, кассовые узлы, двери металлические, передаточные лотки, сейфовые комнаты,  хранилища психотропных и наркотических средств, оружейные комнаты и пр.
+                .col_right
+                    .form_box
+                        .title Остались вопросы?
+                        .sub_title Заполните форму и мы рассчитаем стоимость заказа
+                        form
+                            .c_form
+                                .field
+                                    input.form-control(type="text" placeholder="Ваше имя*")
+                                .field
+                                    input.form-control(type="text" placeholder="Телефон*")
+                                .field
+                                    input.form-control(type="text" placeholder="E-mail*")
+                                .field
+                                    textarea.form-control(placeholder="Сообщение")
+                                .field
+                                    button.btn_default(type="submit") Отправить
+
+
+
+

@@ -911,7 +911,8 @@ main
     font-size: 14px
     font-family: $rubik
 
-
+textarea.form-control
+  height: 100px
 .btn_default
   background: $red
   +border-radius(2px)
@@ -1554,3 +1555,119 @@ a[data-fancybox="gallery"]
       position: relative
       padding: 17px
 
+.map
+  margin-bottom: 35px
+
+.contacts_form_row
+  background: #2D2125
+  +border-radius(5px)
+  padding: 80px
+  color: #fff
+  +flex
+  +wrap
+  @media (max-width: 1200px)
+    padding: 50px
+  @media (max-width: 767px)
+    padding: 30px 15px
+
+
+  .col_left
+    width: 50%
+    padding-right: 25px
+    padding-top: 60px
+    @media (max-width: 1200px)
+      padding-top: 30px
+
+    @media (max-width: 991px)
+      width: 100%
+      margin-bottom: 30px
+      padding-top: 20px
+  .col_right
+    width: 50%
+    @media (max-width: 991px)
+      width: 100%
+
+
+.form_box
+  width: 100%
+  max-width: 544px
+  +border-radius(4px)
+  background: url(../img/form_bg.png)
+  background-size: cover
+  background-position: center
+  padding: 55px
+  border: 1px solid rgba(255, 255, 255, 0.2)
+  +border-radius(5px)
+  position: relative
+  @media (max-width: 1200px)
+    padding: 45px
+  @media (max-width: 767px)
+    padding: 30px
+  @media (max-width: 575px)
+    padding: 30px 15px
+  &:before
+    +b_a
+    right: -15px
+    top: -35px
+    background: url(../img/c_icon.svg)
+    width: 100px
+    height: 162px
+    @media (max-width: 1200px)
+      width: 72px
+      height: 117px
+      background-size: contain
+      right: -5px
+      top: -25px
+
+  .title
+    color: #fff
+    font-size: 38px
+    font-weight: 600
+    font-family: $fira_sans
+    margin-bottom: 35px
+    @media (max-width: 1200px)
+      font-size: 33px
+      margin-bottom: 30px
+    @media (max-width: 991px)
+      font-size: 28px
+      margin-bottom: 20px
+    @media (max-width: 767px)
+      font-size: 28px
+
+  .sub_title
+    color: #D2C6C6
+    font-size: 15px
+    line-height: 25px
+    font-family: $poppins
+    margin-bottom: 35px
+    @media (max-width: 1200px)
+      margin-bottom: 25px
+
+  .btn_default
+    max-width: 204px
+  .field
+    &:last-child
+      margin-bottom: 0
+
+
+.c_list
+  color: #fff
+  li
+    list-style: none
+    padding: 0 !important
+    margin-bottom: 40px
+    @media (max-width: 1200px)
+      margin-bottom: 20px
+    a
+      text-decoration: none
+      color: #fff
+    &.tel
+      font-size: 20px
+      font-family: $poppins
+      @media (max-width: 1200px)
+        font-size: 18px
+    &.c_desc
+      color: #D5D5D5
+      font-family: $rubik
+    &:before
+      display: none
