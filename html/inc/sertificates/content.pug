@@ -1,0 +1,34 @@
+.page_content_header
+    .container
+        .breadcrumb_scroll_block
+            ul.breadcrumb_list
+                li
+                    a.home(href="#")
+                        <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.75 15.5V10.25H11.25V15.5H15.625V8.5H18.25L9.5 0.625L0.75 8.5H3.375V15.5H7.75Z" fill="#312F30"/>
+                        </svg>
+
+                li
+                    a(href="#") Главная
+                li
+                    a(href="#") Сертификаты
+
+
+        h1.page_title Сертификаты
+
+.container
+    .page_content
+
+        .content
+            p.mb-5 В данном разделе вы можете ознакомиться с нашими сертификатами качества. <br>ООО «ТЕХНОСТАРГРУПП» имеет репутацию надежного и профессионального партнера
+            -var cat=['','Защитные конструкции','Алюминиевые перегородки','Офисная мебель']
+            .row.gallery_row
+                -for(var c=1;c<=10;c++)
+                    .col-12.col-sm-6.col-md-4.col-xl-3.item
+                        .gallery_item
+                            a(href=dir+"image92.png" data-fancybox="gallery")
+                                img.img_thumbnail(src=dir+"image92.png")
+
+
+
+
