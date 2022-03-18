@@ -35,17 +35,18 @@ footer
             .modal-body
                 button.close(data-dismiss="modal" aria-label="Close")
                 .form_box
-                    .title Остались вопросы?
+                    .title Рассчитать заказ
                     .sub_title Заполните форму и мы рассчитаем стоимость заказа
                     form
                         .c_form
                             .field
-                                input.form-control(type="text" placeholder="Ваше имя*")
+                                input.form-control(type="text" placeholder="Ваше имя*" required)
                             .field
-                                input.form-control(type="text" placeholder="Телефон*")
+                                input.form-control(type="text" placeholder="Телефон*" required)
                             .field
-                                input.form-control(type="text" placeholder="E-mail*")
+                                input.form-control(type="text" placeholder="E-mail*" required)
                             .field
                                 textarea.form-control(placeholder="Сообщение")
                             .field
                                 button.btn_default(type="submit") Отправить
+

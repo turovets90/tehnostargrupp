@@ -3,4 +3,6 @@ lib/
 design/
 convert/
 
+*.zip
+
 

@@ -1,11 +1,13 @@
 -var m_cat=['Защитные конструкции','Алюминиевые перегородки'];
+-var m_cat_img=['pr_1','pr_2'];
 -var m_cat2=['Сейфовые комнаты','Офисная мебель'];
+-var m_cat2_img=['pr_3','pr_4'];
 main
     .container
         .m_catalog
             for mcat_item, index in m_cat
                 .m_catalog_item
-                    a.m_catalog_item_link.large(href="#" style="background-image:url("+dir+"pr.png)")
+                    a.m_catalog_item_link.large(href="#" style="background-image:url("+dir+m_cat_img[index]+".png)")
                         .m_catalog_item_content
                             .title=mcat_item
                             if index===0
@@ -13,7 +15,7 @@ main
                             .more Подробнее
             .m_catalog_item
                 for mcat_item2, index in m_cat2
-                    a.m_catalog_item_link(href="#" style="background-image:url(" + dir + "pr.png)")
+                    a.m_catalog_item_link(href="#" style="background-image:url(" + dir+m_cat2_img[index]+".png)")
                         .m_catalog_item_content
                             .title=mcat_item2
                             .more Подробнее
@@ -25,10 +27,10 @@ main
             .main_h2 Наши работы
             .main_excerpt Мы являемся сертифицированным производителем защитных конструкций для банков
             .works_list
-                -for(var w=1;w<=5;w++)
+                -for(var w=1;w<=4;w++)
                      .works_list_item
                         picture
-                            img(src=dir+"work.png")
+                            img(src=dir+"w_"+w+".png")
 
         .main_partners
             .main_h2 С нами сотрудничают

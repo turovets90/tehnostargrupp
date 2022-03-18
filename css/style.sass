@@ -120,6 +120,7 @@ $transition_default: .3s linear
 $text_color: #585858
 $bg_black: #312F30
 $red: #DB2C23
+$red_hover: #b41109
 //$grey: #585858
 
 
@@ -294,6 +295,9 @@ header
       padding-left: 0
       //padding-bottom: 2px
       border-bottom: 2px dashed #DB2C23
+      &:hover, &:focus
+        border-bottom: 2px dashed $red_hover
+        color: $red_hover
 
 
 
@@ -678,6 +682,11 @@ main
             color: $red
             &:after
               background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='21' height='9' viewBox='0 0 21 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.6938 0.943359L20.9137 4.50018L16.6938 8.05701L15.7271 6.91007L17.6964 5.25018H0V3.75018H17.6964L15.7271 2.0903L16.6938 0.943359Z' fill='%23DB2C23'/%3e%3c/svg%3e ")
+            &:hover, &:focus
+              color: #b41109
+              text-decoration: none
+              &:after
+                background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='21' height='9' viewBox='0 0 21 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.6938 0.943359L20.9137 4.50018L16.6938 8.05701L15.7271 6.91007L17.6964 5.25018H0V3.75018H17.6964L15.7271 2.0903L16.6938 0.943359Z' fill='%23b41109'/%3e%3c/svg%3e ")
       &.large
         height: 570px
         @media (max-width: 1200px)
@@ -722,10 +731,10 @@ main
   text-decoration: none
   +transition($transition_default)
   &:hover, &:focus
-    color: $red
+    color: #c41108
     text-decoration: none
     &:after
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='21' height='9' viewBox='0 0 21 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.6938 0.943359L20.9137 4.50018L16.6938 8.05701L15.7271 6.91007L17.6964 5.25018H0V3.75018H17.6964L15.7271 2.0903L16.6938 0.943359Z' fill='%23DB2C23'/%3e%3c/svg%3e ")
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='21' height='9' viewBox='0 0 21 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.6938 0.943359L20.9137 4.50018L16.6938 8.05701L15.7271 6.91007L17.6964 5.25018H0V3.75018H17.6964L15.7271 2.0903L16.6938 0.943359Z' fill='%23c41108'/%3e%3c/svg%3e ")
 
   &:after
     +b_a
@@ -829,11 +838,16 @@ main
 
 
 .works_list, .partners_list
+
   .slick-slide
     text-align: center
     img
       display: inline-block
 .works_list
+  .slick-list
+    @media (min-width: 1201px)
+      margin-right: -12px
+      margin-left: -12px
   .works_list_item
     padding: 0 3px
 .main_works
@@ -1044,15 +1058,17 @@ footer
   .footer_menu
     +flex
     +ai-center
-    +wrap
+
     width: 100%
     margin-bottom: 50px
     @media (min-width: 1401px)
       +j-beetween
     @media (max-width: 1024px)
       margin-bottom: 30px
+    @media (max-width: 1200px)
+      +wrap
     li
-      margin-right: 33px
+      margin-right: 30px
       &:last-child
         margin-left: 0
       @media (max-width: 575px)
@@ -1194,11 +1210,13 @@ footer
           border-top: 15px solid transparent
           border-bottom: 15px solid transparent
 
-      a
+      span, a
         position: relative
         color: #9E9E9E
         z-index: 2
         padding-left: 17px
+        font-size: 13px
+        font-family: $rubik
 
 
     a
@@ -1563,6 +1581,11 @@ a[data-fancybox="gallery"]
       font-family: $poppins
       &:after
         background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='21' height='9' viewBox='0 0 21 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.6938 0.943359L20.9137 4.50018L16.6938 8.05701L15.7271 6.91007L17.6964 5.25018H0V3.75018H17.6964L15.7271 2.0903L16.6938 0.943359Z' fill='%23DB2C23'/%3e%3c/svg%3e ")
+      &:hover, &:focus
+        color: #b41109
+        text-decoration: none
+        &:after
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='21' height='9' viewBox='0 0 21 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.6938 0.943359L20.9137 4.50018L16.6938 8.05701L15.7271 6.91007L17.6964 5.25018H0V3.75018H17.6964L15.7271 2.0903L16.6938 0.943359Z' fill='%23b41109'/%3e%3c/svg%3e ")
 
 
 
@@ -1692,6 +1715,8 @@ a[data-fancybox="gallery"]
     a
       text-decoration: none
       color: #fff
+      &:hover, &:focus
+        color: $red
     &.tel
       font-size: 20px
       font-family: $poppins
