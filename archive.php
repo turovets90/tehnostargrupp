@@ -10,6 +10,8 @@
 get_header();
 ?>
 
+<?php get_template_part('inc/breadcrumb'); ?>
+
 	<main id="primary" class="site-main">
 
 		<?php if ( have_posts() ) : ?>

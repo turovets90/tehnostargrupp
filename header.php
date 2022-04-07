@@ -36,8 +36,22 @@
             <?php endif; ?>
             <div class="col_right">
                 <ul class="c_menu">
-                    <li><a class="phone" href="tel:+375 44 708-90-90">+375 44 708-90-90 <span>(Минск)</span></a></li>
-                    <li><a class="phone" href="tel:+375 29 662-19-98">+375 29 662-19-98 <span>(Борисов)</span></a></li>
+                    <?php
+                    $phone1 = get_field('telefon_1',23);
+                    if( $phone1 ):
+                        $link_url1 = $phone1['url'];
+                        $link_title1 = $phone1['title'];
+                        ?>
+                    <li><a class="phone" href="<?php echo esc_url( $link_url1 ); ?>"><?php echo htmlspecialchars_decode( $link_title1 ); ?></a></li>
+                    <?php endif; ?>
+                    <?php
+                    $phone2 = get_field('telefon_2',23);
+                    if( $phone1 ):
+                        $link_url2 = $phone2['url'];
+                        $link_title2 = $phone2['title'];
+                        ?>
+                        <li><a class="phone" href="<?php echo esc_url( $link_url2 ); ?>"><?php echo htmlspecialchars_decode( $link_title2 ); ?></a></li>
+                    <?php endif; ?>
                     <li><a class="feedback" href="#feedback" data-toggle="modal">Связаться с нами</a></li>
                 </ul>
             </div>
@@ -65,10 +79,7 @@
                         <div class="search_box dropdown">
                             <button class="search_btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <form class="search_form">
-                                    <input class="form-control" type="text" placeholder="Введите ваш запрос"/>
-                                    <button class="search_form_btn" type="submit"></button>
-                                </form>
+                                <?php get_search_form();?>
                             </div>
                         </div>
                     </li>

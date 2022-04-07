@@ -9,10 +9,7 @@
 
 ?>
 
-<section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'tehnostargrupp' ); ?></h1>
-	</header><!-- .page-header -->
+<div class="no-results not-found">
 
 	<div class="page-content">
 		<?php
@@ -34,18 +31,15 @@
 		elseif ( is_search() ) :
 			?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'tehnostargrupp' ); ?></p>
+			<p><?php esc_html_e( 'Извините, но ничего не соответствует условиям вашего поиска. Пожалуйста, попытайтесь снова с другими ключевыми словами.', 'tehnostargrupp' ); ?></p>
 			<?php
-			get_search_form();
 
 		else :
 			?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'tehnostargrupp' ); ?></p>
+			<p><?php esc_html_e( 'Кажется, мы не можем найти то, что вы ищете. Возможно поиск поможет.', 'tehnostargrupp' ); ?></p>
 			<?php
-			get_search_form();
-
 		endif;
 		?>
 	</div><!-- .page-content -->
-</section><!-- .no-results -->
+</div><!-- .no-results -->

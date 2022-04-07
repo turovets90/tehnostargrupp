@@ -33,8 +33,22 @@
             </div>
             <div class="col_right">
                 <ul class="c_menu">
-                    <li><a class="phone" href="tel:+375 44 708-90-90">+375 44 708-90-90 <span>(Минск)</span></a></li>
-                    <li><a class="phone" href="tel:+375 29 662-19-98">+375 29 662-19-98 <span>(Борисов)</span></a></li>
+                    <?php
+                    $phone1 = get_field('telefon_1',23);
+                    if( $phone1 ):
+                        $link_url1 = $phone1['url'];
+                        $link_title1 = $phone1['title'];
+                        ?>
+                        <li><a class="phone" href="<?php echo esc_url( $link_url1 ); ?>"><?php echo htmlspecialchars_decode( $link_title1 ); ?></a></li>
+                    <?php endif; ?>
+                    <?php
+                    $phone2 = get_field('telefon_2',23);
+                    if( $phone1 ):
+                        $link_url2 = $phone2['url'];
+                        $link_title2 = $phone2['title'];
+                        ?>
+                        <li><a class="phone" href="<?php echo esc_url( $link_url2 ); ?>"><?php echo htmlspecialchars_decode( $link_title2 ); ?></a></li>
+                    <?php endif; ?>
                     <?php if(get_field('location',23)): ?>
                         <li><span class="location"><?php the_field('location',23); ?></span></li>
                     <?php endif; ?>

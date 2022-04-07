@@ -1310,6 +1310,12 @@ footer
       border-bottom: 1px solid #DBDBDB
       &.active
         border-bottom: 0
+      &.current-page-ancestor
+        .sub-menu
+          display: block
+      &.current_page_item
+        > a
+          color: $red
       .arrow
         position: absolute
         top: 18px
@@ -1376,7 +1382,7 @@ footer
           border-bottom: 1px solid #DBDBDB
           &:last-child
             border-bottom: 0
-          &.active
+          &.active, &.current_page_item
             a
               background: $red
               color: #fff

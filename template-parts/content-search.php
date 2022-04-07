@@ -9,27 +9,13 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-			tehnostargrupp_posted_on();
-			tehnostargrupp_posted_by();
-			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+<div class="results_item" id="post-<?php the_ID(); ?>">
+    <a class="title" href="<?php the_permalink(); ?>">
+        <?php the_title(); ?>
+    </a>
+    <div class="excerpt">
+        <?php the_excerpt(); ?>
+    </div>
+</div>
 
-	<?php tehnostargrupp_post_thumbnail(); ?>
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php tehnostargrupp_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
