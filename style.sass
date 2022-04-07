@@ -1,0 +1,1877 @@
+/*!
+  Theme Name: tehnostargrupp
+  Theme URI: http://underscores.me/
+  Author: Underscores.me
+  Author URI: http://underscores.me/
+  Description: Description
+  Version: 1.0.0
+  Tested up to: 5.4
+  Requires PHP: 5.6
+  License: GNU General Public License v2 or later
+  License URI: LICENSE
+  Text Domain: tehnostargrupp
+  Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+  This theme, like WordPress, is licensed under the GPL.
+  Use it to make something cool, have fun, and share what you've learned.
+
+  tehnostargrupp is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+  Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+  Normalizing styles have been helped along thanks to the fine work of
+  Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+
+@import "./css/fancybox"
+@import "./css/slick-less"
+@import "./css/bootstrap"
+
+=b_a()
+  content: ''
+  position: absolute
+
+=m_a()
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  margin: auto
+
+=flex()
+  display: flex
+  display: -webkit-flex
+
+=j-center()
+  justify-content: center
+  -webkit-justify-content: center
+
+=j-beetween()
+  justify-content: space-between
+  -webkit-justify-content: space-between
+
+=j-space-around()
+  justify-content: space-around
+  -webkit-justify-content: space-around
+
+=j-end()
+  justify-content: flex-end
+  -webkit-justify-content: flex-end
+
+=j-start()
+  justify-content: flex-start
+  -webkit-justify-content: flex-start
+
+=ai-center()
+  align-items: center
+  -webkit-align-items: center
+
+=ai-start()
+  align-items: flex-start
+  -webkit-align-items: flex-start
+
+=ai-end()
+  align-items: flex-end
+  -webkit-align-items: flex-end
+
+=as-center()
+  align-self: center
+  -webkit-align-self: center
+
+=as-end()
+  align-self: flex-end
+  -webkit-align-self: flex-end
+
+=as-start()
+  align-self: flex-start
+  -webkit-align-self: flex-start
+
+=wrap()
+  flex-wrap: wrap
+  -webkit-flex-wrap: wrap
+
+=col()
+  flex-direction: column
+  -webkit-flex-direction: column
+
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  border-radius: $radius
+
+=box-shadow($box-shadow)
+  -webkit-box-shadow: $box-shadow
+  -moz-box-shadow: $box-shadow
+  box-shadow: $box-shadow
+
+=transform($transform)
+  transform: $transform
+  -webkit-transform: $transform
+  -moz-transform: $transform
+  -ms-transform: $transform
+  -o-transform: $transform
+
+=transition($transition_default)
+  transition: $transition_default
+  -webkit-transition: $transition_default
+  -moz-transition: $transition_default
+  -o-transition: $transition_default
+
+
+=animation($transition_default)
+  animation: $transition_default
+  -webkit-animation: $transition_default
+  -moz-animation: $transition_default
+  -o-animation: $transition_default
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap')
+$roboto: 'Roboto', sans-serif
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap')
+$rubik: 'Rubik', sans-serif
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap')
+$poppins: 'Poppins', sans-serif
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800;900&display=swap')
+$fira_sans: 'Fira Sans', sans-serif
+
+
+
+$transition_default: .3s linear
+
+$text_color: #585858
+$bg_black: #312F30
+$red: #DB2C23
+$red_hover: #b41109
+//$grey: #585858
+
+
+a, button
+  +transition($transition_default)
+
+a
+  text-decoration: underline
+  &:hover, &:focus
+    text-decoration: none
+
+button, input, .form_control
+  outline: none
+
+.form_control
+  &:hover, &:focus
+    box-shadow: none
+    outline: none
+
+button
+  cursor: pointer
+  &:hover, &:focus
+    +box-shadow(none)
+    outline: none
+
+
+img, video
+  max-width: 100%
+*
+  outline: none
+
+*, *::before, *::after
+  box-sizing: border-box
+
+ul
+  padding: 0
+  margin: 0
+  li
+    list-style: none
+
+
+*
+  outline: none
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  &::-webkit-scrollbar
+    -webkit-appearance: none
+    width: 0
+  &::-webkit-scrollbar:vertical
+    width: 6px
+    background: #c6c8ca
+  &::-webkit-scrollbar-thumb
+    @include border-radius(4px)
+    background: $red
+
+
+body
+  background: #F8F8F8
+  padding: 0
+  margin: 0
+  color: $text_color
+  font-size: 15px
+  line-height: 25px
+  font-family: $poppins
+  font-weight: 400
+
+
+header
+  width: 100%
+  max-width: 1464px
+  margin: auto
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+
+  background: #fff
+  z-index: 999
+.container
+  width: 100%
+  max-width: 1374px
+
+
+
+
+.top_bar
+  +flex
+  +ai-center
+  +j-beetween
+  padding: 10px 0
+  @media (max-width: 767px)
+    +wrap
+    padding: 5px 0
+    > div
+      width: 100%
+
+  ul
+    +flex
+    @media (max-width: 767px)
+      +wrap
+      width: 100%
+    li
+      @media (max-width: 767px)
+        width: 100%
+        text-align: center
+      + li
+        margin-left: 30px
+        @media (max-width: 1200px)
+          margin-left: 10px
+
+
+.c_menu
+  .location
+    color: $text_color
+    position: relative
+    font-size: 14px
+    font-family: $rubik
+    font-weight: 400
+    padding-left: 22px
+    display: inline-block
+    @media (max-width: 1200px)
+      font-size: 12px
+    &:before
+      +b_a
+      left: 0
+      top: 5px
+      margin: auto
+      width: 9px
+      height: 13px
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='9' height='13' viewBox='0 0 9 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4.5 0C2.01214 0 0 2.0345 0 4.55C0 7.9625 4.5 13 4.5 13C4.5 13 9 7.9625 9 4.55C9 2.0345 6.98786 0 4.5 0ZM4.5 6.175C3.61286 6.175 2.89286 5.447 2.89286 4.55C2.89286 3.653 3.61286 2.925 4.5 2.925C5.38714 2.925 6.10714 3.653 6.10714 4.55C6.10714 5.447 5.38714 6.175 4.5 6.175Z' fill='%23312F30'/%3e%3c/svg%3e ")
+
+
+  a
+    text-decoration: none
+    color: $text_color
+    position: relative
+    font-size: 14px
+    font-family: $rubik
+    font-weight: 400
+    padding-left: 22px
+    @media (max-width: 1200px)
+      font-size: 12px
+    &:before
+      +b_a
+      left: 0
+      top: 0
+      bottom: 0
+      margin: auto
+      +transition($transition_default)
+    &.email
+      &:hover
+        color: $red
+        &:before
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M11.7 0H1.3C0.585 0 0.00649999 0.5625 0.00649999 1.25L0 8.75C0 9.4375 0.585 10 1.3 10H11.7C12.415 10 13 9.4375 13 8.75V1.25C13 0.5625 12.415 0 11.7 0ZM11.7 2.5L6.5 5.625L1.3 2.5V1.25L6.5 4.375L11.7 1.25V2.5Z' fill='%23DB2C23'/%3e%3c/svg%3e ")
+      &:before
+        width: 13px
+        height: 10px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M11.7 0H1.3C0.585 0 0.00649999 0.5625 0.00649999 1.25L0 8.75C0 9.4375 0.585 10 1.3 10H11.7C12.415 10 13 9.4375 13 8.75V1.25C13 0.5625 12.415 0 11.7 0ZM11.7 2.5L6.5 5.625L1.3 2.5V1.25L6.5 4.375L11.7 1.25V2.5Z' fill='%23312F30'/%3e%3c/svg%3e ")
+    &.phone
+      &:hover
+        color: $red
+        &:before
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2.61444 5.62611C3.65444 7.67 5.33 9.33833 7.37389 10.3856L8.96278 8.79667C9.15778 8.60167 9.44667 8.53667 9.69944 8.62333C10.5083 8.89056 11.3822 9.035 12.2778 9.035C12.675 9.035 13 9.36 13 9.75722V12.2778C13 12.675 12.675 13 12.2778 13C5.49611 13 0 7.50389 0 0.722222C0 0.325 0.325 0 0.722222 0H3.25C3.64722 0 3.97222 0.325 3.97222 0.722222C3.97222 1.625 4.11667 2.49167 4.38389 3.30056C4.46333 3.55333 4.40556 3.835 4.20333 4.03722L2.61444 5.62611Z' fill='%23DB2C23'/%3e%3c/svg%3e ")
+
+      &:before
+        width: 13px
+        height: 13px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2.61444 5.62611C3.65444 7.67 5.33 9.33833 7.37389 10.3856L8.96278 8.79667C9.15778 8.60167 9.44667 8.53667 9.69944 8.62333C10.5083 8.89056 11.3822 9.035 12.2778 9.035C12.675 9.035 13 9.36 13 9.75722V12.2778C13 12.675 12.675 13 12.2778 13C5.49611 13 0 7.50389 0 0.722222C0 0.325 0.325 0 0.722222 0H3.25C3.64722 0 3.97222 0.325 3.97222 0.722222C3.97222 1.625 4.11667 2.49167 4.38389 3.30056C4.46333 3.55333 4.40556 3.835 4.20333 4.03722L2.61444 5.62611Z' fill='%23312F30'/%3e%3c/svg%3e ")
+
+    &.feedback
+      color: $red
+      font-weight: 500
+      padding-left: 0
+      //padding-bottom: 2px
+      border-bottom: 2px dashed #DB2C23
+      &:hover, &:focus
+        border-bottom: 2px dashed $red_hover
+        color: $red_hover
+
+
+
+
+
+    &:hover, &:focus
+      text-decoration: none
+    span
+      font-size: 12px
+      font-weight: 300
+      @media (max-width: 1200px)
+        font-size: 11px
+
+
+
+.nav_bar
+  background: $bg_black
+  @media (max-width: 1200px)
+    padding: 10px 0
+  .flex_container
+    +j-beetween
+
+
+.mm_btn
+  @media (min-width: 1201px)
+    display: none
+
+  @media (max-width: 1200px)
+    margin-left: 20px
+    +flex
+  .hamburger
+    position: relative
+    background: none
+    border: 0
+    width: 25px
+    height: 20px
+    span
+      position: absolute
+      width: 100%
+      height: 2px
+      background: #fff
+      +border-radius(2px)
+      left: 0
+      &:nth-child(1)
+        top: 0
+
+      &:nth-child(2)
+        top: 0
+        bottom: 0
+        margin: auto
+      &:nth-child(3)
+        bottom: 0
+
+
+.flex_container
+  +flex
+  +wrap
+
+
+.main_menu
+  @media (max-width: 1200px)
+    position: fixed
+    top: 0
+    right: 0
+    width: 80%
+    height: 100%
+    z-index: 999
+    background: #312f30
+    padding: 20px 15px
+    +transition($transition_default)
+    +transform(translateX(100%))
+    opacity: 0
+    &.open
+      +transform(translateX(0))
+      opacity: 1
+
+  .mm_close
+    @media (min-width: 1201px)
+      display: none
+    width: 30px
+    height: 30px
+    border: 1px solid #fff
+    +border-radius(5px)
+    position: relative
+    &:before, &:after
+      +b_a
+      +m_a
+      width: 20px
+      height: 2px
+      background: #fff
+    &:before
+      +transform(rotate(45deg))
+    &:after
+      +transform(rotate(-45deg))
+
+  @media (min-width: 1201px)
+    +flex
+    +ai-center
+  .menu
+    +flex
+    +ai-center
+    @media (max-width: 1200px)
+      +wrap
+      padding-top: 30px
+    > li
+      position: relative
+      @media (min-width: 1201px)
+        &:hover
+          .sub-menu, .sub_menu
+            display: block
+        +flex
+        +ai-center
+        padding: 30px 5px
+
+        .arrow
+          margin-left: 5px
+          width: 8px
+          height: 5px
+          pointer-events: none
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='5' viewBox='0 0 8 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1L4 4L7 1' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+
+      @media (min-width: 1301px)
+        padding: 30px 12px
+
+      @media (max-width: 1200px)
+        width: 100%
+        margin-bottom: 10px
+        .arrow
+          display: inline-block
+          width: 20px
+          height: 20px
+          border: 1px solid #fff
+          +border-radius(5px)
+          position: absolute
+          right: 0
+          top: 3px
+          &.act
+            &:after
+              opacity: 0
+          &:before, &:after
+            +b_a
+            +m_a
+            width: 10px
+            height: 1px
+            background: #fff
+          &:after
+            +transform(rotate(90deg))
+
+
+      a
+        color: #fff
+        text-transform: uppercase
+        font-family: $roboto
+        font-size: 13px
+        font-weight: 500
+        text-decoration: none
+
+        &:hover, &:focus
+          color: $red
+          text-decoration: none
+
+    .sub-menu, .sub_menu
+      display: none
+      @media (max-width: 1200px)
+        padding-left: 10px
+      @media (min-width: 1201px)
+        position: absolute
+        top: 100%
+        left: 0
+        background: #fff
+        z-index: 99
+        +box-shadow(1px 4px 15px rgba(49, 47, 48, 0.2))
+
+        min-width: 200px
+        padding: 10px 0
+        &:before
+          +b_a
+          width: 100%
+          height: 4px
+          background: $red
+          left: 0
+          top: 0
+        &:after
+          +b_a
+          width: 0
+          height: 0
+          border-bottom: 8px solid $red
+          border-right: 8px solid transparent
+          border-left: 8px solid transparent
+          left: 12px
+          top: -8px
+
+        li
+          margin-bottom: 10px
+          &:last-child
+            margin-bottom: 0
+          a
+            color: $text_color
+            text-transform: uppercase
+            font-family: $roboto
+            font-size: 13px
+            font-weight: 500
+            text-decoration: none
+            padding: 3px 10px
+            &:hover, &:focus
+              color: $red
+
+
+
+.logo
+  padding-top: 5px
+  margin-right: 20px
+  @media (max-width: 1300px)
+    max-width: 250px
+    +flex
+    +ai-center
+    padding-top: 0
+  @media (max-width: 767px)
+    max-width: 60%
+  a
+    display: inline-block
+
+
+.right_menu
+  +flex
+  +ai-center
+.search_box
+  position: relative
+  .search_btn
+    width: 30px
+    height: 30px
+    background: none
+    position: relative
+    border: 0
+    &:before
+      +b_a
+      +m_a
+      width: 23px
+      height: 26px
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='23' height='26' viewBox='0 0 23 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M14.5792 14.9497H13.721L13.4168 14.6564C14.4814 13.418 15.1224 11.8102 15.1224 10.0612C15.1224 6.16124 11.9611 3 8.06118 3C4.16124 3 1 6.16124 1 10.0612C1 13.9611 4.16124 17.1224 8.06118 17.1224C9.81018 17.1224 11.418 16.4814 12.6564 15.4168L12.9497 15.721V16.5792L18.3814 22L20 20.3814L14.5792 14.9497ZM8.06118 14.9497C5.3562 14.9497 3.17267 12.7662 3.17267 10.0612C3.17267 7.3562 5.3562 5.17267 8.06118 5.17267C10.7662 5.17267 12.9497 7.3562 12.9497 10.0612C12.9497 12.7662 10.7662 14.9497 8.06118 14.9497Z' fill='white'/%3e%3c/svg%3e ")
+
+  .dropdown-menu
+    left: initial !important
+    right: 0
+    +border-radius(0)
+    transform: translate3d(0, 55px, 0px) !important
+    +box-shadow(1px 4px 15px rgba(49, 47, 48, 0.2))
+    border: 0
+    padding: 30px
+    @media (max-width: 1200px)
+      padding: 20px
+      transform: translate3d(0, 50px, 0px) !important
+    @media (max-width: 767px)
+      padding: 10px
+      transform: translate3d(0, 53px, 0px) !important
+    @media (max-width: 575px)
+      transform: translate3d(0, 50px, 0px) !important
+    &:before
+      +b_a
+      width: 100%
+      height: 4px
+      background: $red
+      left: 0
+      top: 0
+    &:after
+      +b_a
+      width: 0
+      height: 0
+      border-bottom: 8px solid $red
+      border-left: 8px solid transparent
+      border-right: 8px solid transparent
+      top: -8px
+      right: 0
+
+.search_form
+  +flex
+  +ai-center
+  min-width: 372px
+  @media (max-width: 1200px)
+    min-width: 300px
+  @media (max-width: 767px)
+    min-width: 235px
+  .form-control
+    background: #EEEEEE
+    +border-radius(2px 0 0 2px)
+    width: calc(100% - 45px)
+    border: 0
+    height: 45px
+    padding-left: 15px
+    color: $text_color
+    font-size: 14px
+    font-family: $rubik
+    @media (max-width: 767px)
+      padding-left: 10px
+
+    &:hover, &:focus
+      +box-shadow(none)
+      outline: none
+    &::-webkit-input-placeholder
+      color: $text_color
+      font-size: 14px
+      font-family: $rubik
+    &::-moz-placeholder
+      color: $text_color
+      font-size: 14px
+      font-family: $rubik
+    &::-ms-input-placeholder
+      color: $text_color
+      font-size: 14px
+      font-family: $rubik
+    &:-moz-placeholder
+      color: $text_color
+      font-size: 14px
+      font-family: $rubik
+    &:-ms-input-placeholder
+      color: $text_color
+      font-size: 14px
+      font-family: $rubik
+
+  .search_form_btn
+    width: 45px
+    height: 45px
+    background: $red
+    position: relative
+    border: 0
+
+    &:before
+      +b_a
+      +m_a
+      width: 23px
+      height: 26px
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='23' height='26' viewBox='0 0 23 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M14.5792 14.9497H13.721L13.4168 14.6564C14.4814 13.418 15.1224 11.8102 15.1224 10.0612C15.1224 6.16124 11.9611 3 8.06118 3C4.16124 3 1 6.16124 1 10.0612C1 13.9611 4.16124 17.1224 8.06118 17.1224C9.81018 17.1224 11.418 16.4814 12.6564 15.4168L12.9497 15.721V16.5792L18.3814 22L20 20.3814L14.5792 14.9497ZM8.06118 14.9497C5.3562 14.9497 3.17267 12.7662 3.17267 10.0612C3.17267 7.3562 5.3562 5.17267 8.06118 5.17267C10.7662 5.17267 12.9497 7.3562 12.9497 10.0612C12.9497 12.7662 10.7662 14.9497 8.06118 14.9497Z' fill='white'/%3e%3c/svg%3e ")
+
+main
+  margin-top: 132px
+  @media (max-width: 575px)
+    margin-top: 192px
+
+
+.m_catalog
+  +flex
+  margin-left: -3px
+  margin-right: -3px
+  padding-top: 25px
+  +wrap
+  .m_catalog_item
+    padding: 0 3px
+    width: 33.33%
+    @media (max-width: 767px)
+      width: 100%
+    .m_catalog_item_link
+      +flex
+      +ai-end
+      padding: 35px
+      width: 100%
+      height: 282px
+      margin-bottom: 6px
+      text-decoration: none
+      position: relative
+      background-size: cover
+      background-position: center
+      @media (max-width: 1200px)
+        padding: 25px
+        height: 200px
+      @media (max-width: 767px)
+        height: 220px
+        padding: 15px
+      &:before
+        +b_a
+        width: 100%
+        height: 100%
+        background: linear-gradient(15.64deg, rgba(49, 47, 48, 0.6) -28.96%, rgba(49, 47, 48, 0) 92.07%)
+        left: 0
+        top: 0
+        +transition($transition_default)
+      &:hover, &:focus
+        text-decoration: none
+        &:before
+          opacity: 0
+        .m_catalog_item_content
+          .more
+            color: $red
+            &:after
+              background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='21' height='9' viewBox='0 0 21 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.6938 0.943359L20.9137 4.50018L16.6938 8.05701L15.7271 6.91007L17.6964 5.25018H0V3.75018H17.6964L15.7271 2.0903L16.6938 0.943359Z' fill='%23DB2C23'/%3e%3c/svg%3e ")
+            &:hover, &:focus
+              color: #b41109
+              text-decoration: none
+              &:after
+                background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='21' height='9' viewBox='0 0 21 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.6938 0.943359L20.9137 4.50018L16.6938 8.05701L15.7271 6.91007L17.6964 5.25018H0V3.75018H17.6964L15.7271 2.0903L16.6938 0.943359Z' fill='%23b41109'/%3e%3c/svg%3e ")
+      &.large
+        height: 570px
+        @media (max-width: 1200px)
+          height: 406px
+        @media (max-width: 767px)
+          height: 220px
+      .m_catalog_item_content
+        position: relative
+
+        .title
+          color: #fff
+          font-weight: 600
+          font-family: $fira_sans
+          font-size: 29px
+          line-height: 35px
+          margin-bottom: 20px
+          @media (max-width: 1200px)
+            font-size: 25px
+            line-height: 1.2
+            margin-bottom: 10px
+          @media (max-width: 767px)
+            font-size: 23px
+        .desc
+          color: #fff
+          font-size: 15px
+          line-height: 22px
+          font-family: $poppins
+          margin-bottom: 20px
+          @media (max-width: 1200px)
+            font-size: 14px
+            line-height: 1.2
+            margin-bottom: 10px
+.more
+  display: inline-block
+  position: relative
+  text-transform: uppercase
+  color: #fff
+  font-size: 13px
+  font-weight: 600
+  font-family: $poppins
+  padding-right: 37px
+  text-decoration: none
+  +transition($transition_default)
+  &:hover, &:focus
+    color: #c41108
+    text-decoration: none
+    &:after
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='21' height='9' viewBox='0 0 21 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.6938 0.943359L20.9137 4.50018L16.6938 8.05701L15.7271 6.91007L17.6964 5.25018H0V3.75018H17.6964L15.7271 2.0903L16.6938 0.943359Z' fill='%23c41108'/%3e%3c/svg%3e ")
+
+  &:after
+    +b_a
+    right: 0
+    top: 0
+    bottom: 0
+    margin: auto
+    width: 21px
+    height: 9px
+    +transition($transition_default)
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='21' height='9' viewBox='0 0 21 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.6938 0.943359L20.9137 4.50018L16.6938 8.05701L15.7271 6.91007L17.6964 5.25018H0V3.75018H17.6964L15.7271 2.0903L16.6938 0.943359Z' fill='white'/%3e%3c/svg%3e ")
+
+
+
+
+.slick-dots
+  bottom: -40px
+  @media (max-width: 1200px)
+    bottom: -30px
+  li
+    width: 30px
+    height: auto
+    margin: 0 7px
+    padding-left: 0
+    &:before
+      display: none
+    &.slick-active
+      button
+        background: #000000
+    button
+      width: 30px
+      height: 7px
+      background: #C4C4C4
+      +border-radius(5px)
+      padding: 0
+      &:hover
+        background: $red
+      &:before
+        display: none
+
+
+
+.main_h2
+  color: #312F30
+  font-size: 28px
+  line-height: 34px
+  font-weight: 600
+  font-family: $fira_sans
+  margin-bottom: 26px
+  padding-top: 70px
+  @media (max-width: 1200px)
+    font-size: 26px
+    line-height: 1.2
+    margin-bottom: 15px
+    padding-top: 50px
+  @media (max-width: 767px)
+    padding-top: 30px
+    font-size: 24px
+
+.main_excerpt
+  max-width: 545px
+  color: $text_color
+  font-size: 15px
+  line-height: 25px
+  font-family: $poppins
+  margin-bottom: 45px
+  @media (max-width: 1200px)
+    margin-bottom: 35px
+  @media (max-width: 767px)
+    margin-bottom: 25px
+
+
+
+.slick-arrow
+  width: 40px
+  height: 40px
+  +border-radius(2px)
+  background: rgba(45, 33, 37, 0.45)
+  +transition($transition_default)
+  z-index: 2
+  &:hover, &:focus
+    background: $red
+  &:before
+    +b_a
+    +m_a
+    width: 10px
+    height: 18px
+
+.slick-next
+  right: -20px
+  @media (max-width: 1400px)
+    right: -10px
+  &:before
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.292893 17.7071C-0.0976311 17.3166 -0.0976312 16.6834 0.292893 16.2929L7.58579 9L0.292893 1.70711C-0.0976318 1.31658 -0.0976319 0.683418 0.292892 0.292892C0.683417 -0.0976315 1.31658 -0.0976315 1.70711 0.292892L9.70711 8.29289C10.0976 8.68342 10.0976 9.31658 9.70711 9.70711L1.70711 17.7071C1.31658 18.0976 0.683418 18.0976 0.292893 17.7071Z' fill='%23EBEBEB'/%3e%3c/svg%3e ")
+.slick-prev
+  left: -20px
+  @media (max-width: 1400px)
+    left: -10px
+  &:before
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.70711 0.292893C10.0976 0.683418 10.0976 1.31658 9.70711 1.70711L2.41421 9L9.70711 16.2929C10.0976 16.6834 10.0976 17.3166 9.70711 17.7071C9.31658 18.0976 8.68342 18.0976 8.29289 17.7071L0.292893 9.70711C-0.0976319 9.31658 -0.0976318 8.68342 0.292893 8.29289L8.29289 0.292893C8.68342 -0.0976312 9.31658 -0.0976311 9.70711 0.292893Z' fill='%23EBEBEB'/%3e%3c/svg%3e ")
+
+
+.works_list, .partners_list
+
+  .slick-slide
+    text-align: center
+    img
+      display: inline-block
+.works_list
+  .slick-list
+    @media (min-width: 1201px)
+      margin-right: -12px
+      margin-left: -12px
+  .works_list_item
+    padding: 0 3px
+.main_works
+  padding-bottom: 45px
+
+
+.main_form_box
+  +border-radius(5px)
+  background: url(./img/mf_bg.png)
+  background-position: center
+  background-size: cover
+  color: #fff
+  min-height: 290px
+  +flex
+  +ai-center
+  padding: 30px 115px
+  @media (max-width: 1300px)
+    padding: 30px 50px
+  @media (max-width: 991px)
+    padding: 20px 30px
+  @media (max-width: 767px)
+    padding: 20px 15px
+  .flex_container
+    width: 100%
+    margin: 0 -15px
+    > div
+      padding: 0 15px
+    .col_left
+      width: 40%
+      @media (max-width: 767px)
+        width: 100%
+        margin-bottom: 30px
+    .col_right
+      width: 60%
+      padding-right: 0
+      @media (max-width: 767px)
+        width: 100%
+
+  .title
+    color: #fff
+    font-size: 38px
+    line-height: 46px
+    font-weight: 600
+    font-family: $fira_sans
+    margin-bottom: 25px
+    @media (max-width: 1200px)
+      font-size: 35px
+      line-height: 1.2
+    @media (max-width: 991px)
+      font-size: 30px
+
+  .subtitle
+    color: #D2C6C6
+    font-size: 15px
+    line-height: 25px
+    font-family: $poppins
+
+.j_end
+  +flex
+  +j-end
+
+.field
+  margin-bottom: 22px
+
+.form-control
+  height: 45px
+  width: 100%
+  background: #EEEEEE
+  +border-radius(2px)
+  border: 0
+  padding-left: 15px
+  color: #585858
+  font-size: 14px
+  font-family: $rubik
+  &:hover, &:focus
+    +box-shadow(none)
+    border: 0
+    outline: none
+  &::-webkit-input-placeholder
+    color: #585858
+    font-size: 14px
+    font-family: $rubik
+  &::-ms-input-placeholder
+    color: #585858
+    font-size: 14px
+    font-family: $rubik
+  &::-moz-placeholder
+    color: #585858
+    font-size: 14px
+    font-family: $rubik
+  &:-ms-input-placeholder
+    color: #585858
+    font-size: 14px
+    font-family: $rubik
+  &:-moz-placeholder
+    color: #585858
+    font-size: 14px
+    font-family: $rubik
+
+textarea.form-control
+  height: 100px
+.btn_default
+  background: $red
+  +border-radius(2px)
+  color: #fff
+  width: 100%
+  height: 45px
+  +flex
+  +ai-center
+  +j-center
+  font-weight: 500
+  font-size: 14px
+  text-transform: uppercase
+  font-family: $rubik
+  border: 2px solid $red
+  &:hover, &:focus
+    background: #fff
+    color: $red
+
+
+.main_partners
+  padding-bottom: 80px
+
+
+.main_seotext
+  padding-bottom: 65px
+  @media (max-width: 1200px)
+    padding-bottom: 45px
+  @media (max-width: 991px)
+    padding-bottom: 30px
+  .desc
+    color: #585858
+    font-size: 15px
+    line-height: 25px
+    font-weight: 500
+    font-family: $poppins
+    *
+      font-family: $poppins
+    ul
+      padding-left: 8px
+      li
+        margin-bottom: 20px
+        position: relative
+        padding-left: 10px
+        &:before
+          +b_a
+          width: 4px
+          height: 4px
+          background: #585858
+          +border-radius(50%)
+          left: 0
+          top: 10px
+
+
+.f_feedback
+  +flex
+  +ai-center
+  +j-center
+  text-decoration: none
+  width: 100%
+  max-width: 204px
+  height: 45px
+  border: 2px solid #DB2C23
+  +border-radius(2px)
+  color: #DB2C23
+  font-weight: 500
+  font-size: 14px
+  font-family: $rubik
+  @media (max-width: 1024px)
+    margin-bottom: 20px
+
+  &:hover, &:focus
+    text-decoration: none
+    background: $red
+    color: #fff
+
+footer
+  background: #EFEFEF
+  padding: 75px 0
+  @media (max-width: 1200px)
+    padding: 60px 0
+  @media (max-width: 991px)
+    padding: 40px 0
+  @media (max-width: 767px)
+    padding: 30px 0
+  .flex_container
+    +j-beetween
+    .col_left
+      width: 76%
+      padding-right: 30px
+      @media (min-width: 1401px)
+        max-width: 66.5%
+        padding-right: 0
+      @media (max-width: 1024px)
+        width: 100%
+    .col_right
+      width: 24%
+      @media (max-width: 1024px)
+        width: 100%
+
+
+
+  .c_menu
+    @media (max-width: 1024px)
+      margin-bottom: 30px
+    li
+      margin-bottom: 10px
+  .footer_menu
+    +flex
+    +ai-center
+
+    width: 100%
+    margin-bottom: 50px
+    @media (min-width: 1401px)
+      +j-beetween
+    @media (max-width: 1024px)
+      margin-bottom: 30px
+    @media (max-width: 1200px)
+      +wrap
+    li
+      margin-right: 30px
+      &:last-child
+        margin-left: 0
+      @media (max-width: 575px)
+        width: 100%
+      a
+        color: #312F30
+        font-size: 15px
+        font-family: $roboto
+        text-decoration: none
+        &:hover
+          text-decoration: none
+          color: $red
+  .fj_end
+    @media (min-width: 1025px)
+      +flex
+      +j-end
+      +ai-center
+
+
+.col_mb
+  @media (min-width: 1025px)
+    display: none
+.col_xl
+  @media (max-width: 1024px)
+    display: none
+
+.copyright
+  color: #585858
+  font-size: 14px
+  font-family: $rubik
+  font-weight: 300
+  margin-bottom: 30px
+  @media (max-width: 1024px)
+    margin-bottom: 5px
+
+.dev
+  color: #585858
+  font-size: 14px
+  font-family: $rubik
+  font-weight: 300
+  a
+    text-decoration: underline
+    color: #585858
+    &:hover, &:focus
+      text-decoration: none
+      color: $red
+
+
+.page_content_header
+  width: 100%
+  max-width: 1464px
+  margin: auto
+  background: url(./img/crumb_bg.png)
+  background-size: cover
+  background-position: center
+  padding: 45px 0
+  @media (max-width: 1200px)
+    padding: 30px 0
+  @media (max-width: 767px)
+    padding: 15px 0
+
+
+.breadcrumb_list
+  +flex
+  +ai-center
+  background: none
+  padding: 0
+  overflow: auto
+  margin: 0 0 25px
+  &::-webkit-scrollbar
+    width: 3px
+    height: 3px
+    background:  #c6c8ca
+  &::-webkit-scrollbar-thumb:horizontal
+    background:  $red
+    @include border-radius(4px)
+
+  li
+    position: relative
+    padding: 0 22px
+    background: #fff
+    height: 45px
+    +flex
+    +ai-center
+
+    @media (max-width: 1200px)
+      height: 30px
+      padding: 0 10px
+
+    &:first-child
+      padding-left: 22px
+      @media (max-width: 1200px)
+        padding-left: 10px
+
+    + li
+      &:before
+        +b_a
+        left: -3px
+        top: 0
+        bottom: 0
+        margin: auto
+        width: 6px
+        height: 7px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='6' height='7' viewBox='0 0 6 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1L4 3.5L1 6' stroke='%237E7E7E' stroke-width='1.5'/%3e%3c/svg%3e ")
+
+
+
+    &:last-child
+      background: #312F30
+
+      &:before
+        background: none
+        width: 0
+        height: 0
+        top: 0
+        left: initial
+        bottom: initial
+        right: -22px
+        border-left: 22px solid #312f30
+        border-top: 22px solid transparent
+        border-bottom: 22px solid transparent
+        @media (max-width: 1200px)
+          right: -15px
+          border-left: 15px solid #312f30
+          border-top: 15px solid transparent
+          border-bottom: 15px solid transparent
+      &:after
+        +b_a
+
+        width: 0
+        height: 0
+        top: 0
+        left: 0
+        border-left: 22px solid #fff
+        border-top: 22px solid transparent
+        border-bottom: 22px solid transparent
+        @media (max-width: 1200px)
+          border-left: 15px solid #fff
+          border-top: 15px solid transparent
+          border-bottom: 15px solid transparent
+
+      span, a
+        position: relative
+        color: #9E9E9E
+        z-index: 2
+        padding-left: 17px
+        font-size: 13px
+        font-family: $rubik
+
+
+    a
+      color: #312F30
+      font-size: 13px
+      font-family: $rubik
+      text-decoration: none
+      white-space: nowrap
+      &.home
+        svg
+          margin-top: -3px
+
+
+      &:hover, &:focus
+        text-decoration: none
+        color: $red
+      &.home
+        +flex
+
+
+
+.page_title
+  color: #312F30
+  font-size: 29px
+  line-height: 35px
+  font-weight: 600
+  font-family: $fira_sans
+  margin-bottom: 43px
+  @media (max-width: 1200px)
+    font-size: 27px
+    line-height: 1.2
+    margin-bottom: 30px
+  @media (max-width: 767px)
+    font-size: 25px
+
+
+.page_content
+  background: #fff
+  margin-top: -45px
+  position: relative
+  padding: 45px 35px
+  margin-bottom: 80px
+  @media (max-width: 1200px)
+    margin-bottom: 50px
+    padding: 30px 25px
+    margin-top: -40px
+  @media (max-width: 767px)
+    margin-top: -30px
+    padding: 20px 15px
+  .flex_container
+
+    .aside
+      width: 283px
+      @media (max-width: 991px)
+        width: 100%
+        margin-bottom: 20px
+    .content
+      width: calc(100% - 283px)
+      padding-left: 22px
+      @media (max-width: 991px)
+        width: 100%
+        padding-left: 0
+
+.sidebar_menu
+  .menu
+    > li
+      position: relative
+      border-bottom: 1px solid #DBDBDB
+      &.active
+        border-bottom: 0
+      .arrow
+        position: absolute
+        top: 18px
+        //bottom: 0
+        right: 0
+        margin: auto
+        width: 30px
+        height: 30px
+        cursor: pointer
+        @media (max-width: 1200px)
+          top: 8px
+        &:before
+          +b_a
+          right: 0
+          top: 0
+          bottom: 0
+          margin: auto
+          width: 13px
+          height: 8px
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='8' viewBox='0 0 13 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12 1L6.5 6L1 1' stroke='%232D2125' stroke-width='1.5'/%3e%3c/svg%3e ")
+      &:first-child
+        border-top: 1px solid #DBDBDB
+      > a
+        color: #2D2125
+
+        font-size: 18px
+        line-height: 24px
+        font-family: $rubik
+        text-decoration: none
+        width: 100%
+        display: inline-block
+        padding: 20px 0
+        @media (max-width: 1200px)
+          padding: 10px 0
+          font-size: 16px
+        &:hover, &:focus
+          text-decoration: none
+
+      .sub-menu
+        display: none
+        position: relative
+        background: #F8F8F8
+
+        &:before
+          +b_a
+          left: 0
+          top: 0
+          width: 100%
+          height: 4px
+          background: $red
+        &:after
+          +b_a
+          left: 0
+          right: 0
+          margin: auto
+          top: 4px
+          width: 0
+          height: 0
+          border-top: 8px solid $red
+          border-right: 8px solid transparent
+          border-left: 8px solid transparent
+
+        li
+          border-bottom: 1px solid #DBDBDB
+          &:last-child
+            border-bottom: 0
+          &.active
+            a
+              background: $red
+              color: #fff
+
+          a
+            color: #312F30
+            font-size: 16px
+            font-family: $rubik
+            text-decoration: none
+            display: inline-block
+            width: 100%
+            padding: 20px 20px 20px 25px
+            @media (max-width: 1200px)
+              padding: 10px 10px 10px 15px
+              font-size: 14px
+            &:hover, &:focus
+              text-decoration: none
+              background: $red
+              color: #fff
+
+
+.content
+  color: #585858
+  font-family: $poppins
+  font-size: 15px
+  line-height: 25px
+  h2, .h2
+    color: #312F30
+    font-weight: 600
+    font-size: 22px
+    line-height: 26px
+    font-family: $fira_sans
+    padding-top: 35px
+    margin-bottom: 25px
+    @media (max-width: 1200px)
+      padding-top: 20px
+      margin-bottom: 20px
+
+  .works_list
+    padding-bottom: 50px
+    margin-bottom: 65px
+    @media (max-width: 1200px)
+      padding-bottom: 30px
+
+    @media (max-width: 767px)
+      padding-bottom: 20px
+
+
+  ul
+    padding-left: 8px
+    margin-bottom: 45px
+    @media (max-width: 1200px)
+      margin-bottom: 30px
+    @media (max-width: 767px)
+      margin-bottom: 10px
+    li
+      //margin-bottom: 20px
+      position: relative
+      padding-left: 10px
+      &:before
+        +b_a
+        width: 4px
+        height: 4px
+        background: #585858
+        +border-radius(50%)
+        left: 0
+        top: 10px
+
+
+a[data-fancybox="gallery"]
+  position: relative
+  display: inline-block
+  &:after
+    +b_a
+    width: 100%
+    height: 100%
+    background: rgba(45, 33, 37, 0.35)
+    +transition($transition_default)
+    top: 0
+    left: 0
+    z-index: 1
+    pointer-events: none
+    opacity: 0
+  &:hover
+    &:before, &:after
+      opacity: 1
+  &:before
+    +b_a
+    +m_a
+    width: 45px
+    height: 45px
+    pointer-events: none
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='45' height='45' viewBox='0 0 45 45' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M29.0625 26.25H27.5813L27.0563 25.7438C28.8938 23.6063 30 20.8313 30 17.8125C30 11.0813 24.5438 5.625 17.8125 5.625C11.0813 5.625 5.625 11.0813 5.625 17.8125C5.625 24.5438 11.0813 30 17.8125 30C20.8313 30 23.6063 28.8938 25.7438 27.0563L26.25 27.5813V29.0625L35.625 38.4188L38.4188 35.625L29.0625 26.25V26.25ZM17.8125 26.25C13.1438 26.25 9.375 22.4813 9.375 17.8125C9.375 13.1438 13.1438 9.375 17.8125 9.375C22.4813 9.375 26.25 13.1438 26.25 17.8125C26.25 22.4813 22.4813 26.25 17.8125 26.25Z' fill='%23EBEBEB'/%3e%3cpath d='M22.5 18.75H18.75V22.5H16.875V18.75H13.125V16.875H16.875V13.125H18.75V16.875H22.5V18.75Z' fill='%23EBEBEB'/%3e%3c/svg%3e ")
+    +transition($transition_default)
+    opacity: 0
+    z-index: 2
+
+
+.product_feedback_box
+  background: url(./img/pr_bg.png)
+  background-size: cover
+  background-position: center
+  padding: 80px
+  +border-radius(5px)
+  margin-bottom: 35px
+  @media (max-width: 1200px)
+    padding: 30px
+    margin-bottom: 20px
+  @media (max-width: 767px)
+    padding: 20px 15px
+    margin-bottom: 0
+  .col_left
+    width: 70%
+    @media (max-width: 767px)
+      width: 100%
+      margin-bottom: 20px
+    .title
+      color: #fff
+      font-size: 22px
+      line-height: 22px
+      font-weight: 600
+      font-family: $fira_sans
+      margin-bottom: 30px
+      @media (max-width: 1200px)
+        font-size: 20px
+        line-height: 1.2
+        margin-bottom: 20px
+
+    .subtitle
+      color: #D2C6C6
+      font-family: $poppins
+      font-size: 15px
+      line-height: 25px
+      @media (max-width: 1200px)
+        font-size: 14px
+        line-height: 1.2
+
+  .col_right
+    width: 30%
+    +flex
+    +ai-end
+    +j-end
+    @media (max-width: 767px)
+      width: 100%
+
+    .btn_default
+      max-width: 204px
+      @media (max-width: 767px)
+        max-width: 100%
+
+
+.category_row
+  margin-left: -3px
+  margin-right: -3px
+  margin-bottom: 30px
+  .item
+    padding-left: 3px
+    padding-right: 3px
+    margin-bottom: 6px
+  .category_item
+    border: 1px solid #DBDBDB
+    padding: 35px
+    height: 100%
+    @media (max-width: 1200px)
+      padding: 25px
+    @media (max-width: 991px)
+      padding: 20px
+    @media (max-width: 767px)
+      padding: 15px
+    picture
+      display: inline-block
+      position: relative
+      margin: 0 auto 55px
+      @media (max-width: 1200px)
+        margin-bottom: 45px
+      @media (max-width: 767px)
+        margin-bottom: 30px
+
+    .icon
+      position: absolute
+      left: 0
+      bottom: -35px
+      +border-radius(50%)
+      background: #fff
+      border: 1px solid #DBDBDB
+      box-shadow: 1px 2px 12px rgba(0, 0, 0, 0.08)
+      width: 70px
+      height: 70px
+      @media (max-width: 1200px)
+        width: 50px
+        height: 50px
+        bottom: -25px
+        img, svg
+          max-width: 28px
+          max-height: 28px
+      @media (max-width: 767px)
+        width: 40px
+        height: 40px
+        bottom: -20px
+        img, svg
+          max-width: 20px
+          max-height: 20px
+      img, svg
+        position: absolute
+        +m_a
+
+    .category_name
+      color: #2D2125
+      font-size: 22px
+      line-height: 26px
+      font-weight: 500
+      font-family: $rubik
+      margin-bottom: 18px
+      @media (max-width: 1200px)
+        margin-bottom: 10px
+        font-size: 20px
+      @media (max-width: 767px)
+        font-size: 18px
+
+
+    .more
+      color: $red
+      font-size: 13px
+      font-weight: 600
+      font-family: $poppins
+      &:after
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='21' height='9' viewBox='0 0 21 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.6938 0.943359L20.9137 4.50018L16.6938 8.05701L15.7271 6.91007L17.6964 5.25018H0V3.75018H17.6964L15.7271 2.0903L16.6938 0.943359Z' fill='%23DB2C23'/%3e%3c/svg%3e ")
+      &:hover, &:focus
+        color: #b41109
+        text-decoration: none
+        &:after
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='21' height='9' viewBox='0 0 21 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.6938 0.943359L20.9137 4.50018L16.6938 8.05701L15.7271 6.91007L17.6964 5.25018H0V3.75018H17.6964L15.7271 2.0903L16.6938 0.943359Z' fill='%23b41109'/%3e%3c/svg%3e ")
+
+
+
+
+
+.gallery_row
+  margin-left: -3px
+  margin-right: -3px
+  margin-bottom: 30px
+  .item
+    padding-left: 3px
+    padding-right: 3px
+    margin-bottom: 6px
+  .gallery_item
+    border: 1px solid #DBDBDB
+    text-align: center
+    position: relative
+    a
+      display: inline-block
+      width: 100%
+      position: relative
+      padding: 17px
+
+.map
+  margin-bottom: 35px
+  height: 420px
+
+.contacts_form_row
+  background: #2D2125
+  +border-radius(5px)
+  padding: 80px
+  color: #fff
+  +flex
+  +wrap
+  @media (max-width: 1200px)
+    padding: 50px
+  @media (max-width: 767px)
+    padding: 30px 15px
+
+
+  .col_left
+    width: 50%
+    padding-right: 25px
+    padding-top: 60px
+    @media (max-width: 1200px)
+      padding-top: 30px
+
+    @media (max-width: 991px)
+      width: 100%
+      margin-bottom: 30px
+      padding-top: 20px
+  .col_right
+    width: 50%
+    @media (max-width: 991px)
+      width: 100%
+
+
+.form_box
+  width: 100%
+  max-width: 544px
+  +border-radius(4px)
+  background: url(./img/form_bg.png)
+  background-size: cover
+  background-position: center
+  padding: 55px
+  border: 1px solid rgba(255, 255, 255, 0.2)
+  +border-radius(5px)
+  position: relative
+  @media (max-width: 1200px)
+    padding: 45px
+  @media (max-width: 767px)
+    padding: 30px
+  @media (max-width: 575px)
+    padding: 30px 15px
+  &:before
+    +b_a
+    right: -15px
+    top: -35px
+    background: url(./img/c_icon.svg)
+    width: 100px
+    height: 162px
+    @media (max-width: 1200px)
+      width: 72px
+      height: 117px
+      background-size: contain
+      right: -5px
+      top: -25px
+
+  .title
+    color: #fff
+    font-size: 38px
+    font-weight: 600
+    font-family: $fira_sans
+    margin-bottom: 35px
+    @media (max-width: 1200px)
+      font-size: 33px
+      margin-bottom: 30px
+    @media (max-width: 991px)
+      font-size: 28px
+      margin-bottom: 20px
+    @media (max-width: 767px)
+      font-size: 28px
+
+  .sub_title
+    color: #D2C6C6
+    font-size: 15px
+    line-height: 25px
+    font-family: $poppins
+    margin-bottom: 35px
+    @media (max-width: 1200px)
+      margin-bottom: 25px
+
+  .btn_default
+    max-width: 204px
+  .field
+    &:last-child
+      margin-bottom: 0
+
+
+.c_list
+  color: #fff
+  li
+    list-style: none
+    padding: 0 !important
+    margin-bottom: 40px
+    @media (max-width: 1200px)
+      margin-bottom: 20px
+    a
+      text-decoration: none
+      color: #fff
+      &:hover, &:focus
+        color: $red
+    &.tel
+      font-size: 20px
+      font-family: $poppins
+      @media (max-width: 1200px)
+        font-size: 18px
+    &.c_desc
+      color: #D5D5D5
+      font-family: $rubik
+    &:before
+      display: none
+
+
+
+.modal
+  .close
+    position: absolute
+    top: -30px
+    right: -30px
+    border: 1px solid #DBDBDB
+    +box-shadow(1px 2px 12px rgba(0, 0, 0, 0.08))
+    background: #fff
+    width: 60px
+    height: 60px
+    +border-radius(50%)
+    z-index: 2
+    opacity: 1 !important
+    &:hover, &:focus
+      background: $red
+      opacity: 1
+      border: 1px solid $red
+      &:before, &:after
+        background: #fff
+    @media (max-width: 1200px)
+      width: 40px
+      height: 40px
+      top: -20px
+      right: -20px
+      @media (max-width: 767px)
+        right: -5px
+    &:before, &:after
+      +b_a
+      width: 26px
+      height: 2px
+      background: #9E9E9E
+      +m_a
+      @media (max-width: 1200px)
+        width: 20px
+    &:before
+      +transform(rotate(45deg))
+    &:after
+      +transform(rotate(-45deg))
+  .modal-dialog
+    margin-top: 50px
+  .modal-content
+    background: #2D2125
+    border: 0
+
+    +border-radius(0)
+    .modal-body
+      padding: 0
+      .form_box
+        &:before
+          display: none
+
+.modal-open, .modal
+  padding-right: 0 !important
+
+
+
+.result_count
+  color: #312F30
+  font-weight: 600
+  font-size: 22px
+  font-family: $fira_sans
+  margin-bottom: 80px
+  @media (max-width: 1200px)
+    margin-bottom: 50px
+    font-size: 22px
+  @media (max-width: 767px)
+    margin-bottom: 30px
+    font-size: 18px
+
+
+.content
+  .search_form
+    margin-bottom: 25px
+
+
+.results
+  margin-bottom: 30px
+  .results_item
+    border: 1px solid #DBDBDB
+    padding: 35px
+    margin-bottom: 6px
+    @media (max-width: 1200px)
+      padding: 30px
+    @media (max-width: 991px)
+      padding: 20px
+    @media (max-width: 767px)
+      padding: 15px
+    .title
+      text-decoration: none
+      color: #DB2C23
+      font-size: 22px
+      font-weight: 600
+      font-family: $fira_sans
+      margin-bottom: 20px
+      display: block
+      @media (max-width: 1200px)
+        font-size: 20px
+        margin-bottom: 15px
+      @media (max-width: 767px)
+        font-size: 18px
+        margin-bottom: 10px
+      &:hover, &:focus
+        text-decoration: underline
+    .excerpt
+      color: #585858
+      font-family: $poppins
+
+
+
+.admin-bar
+  header
+    top: 32px
+    @media (max-width: 767px)
+      top: 46px
+
+  .main_menu
+    @media (max-width: 1200px)
+      padding-top: 30px
+    @media (max-width: 767px)
+      padding-top: 60px
+
