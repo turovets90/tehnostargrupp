@@ -33,7 +33,6 @@ get_header();
     </div>
 </div>
 
-
 <div class="container">
     <div class="page_content">
         <div class="content">

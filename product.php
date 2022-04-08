@@ -8,7 +8,6 @@ get_header();
 
 <?php get_template_part('inc/breadcrumb'); ?>
 
-
 <div class="container">
     <div class="page_content">
         <div class="flex_container">
@@ -24,10 +23,12 @@ get_header();
                 </div>
             </div>
             <div class="content">
-                <?php
-                the_post();
-                the_content();
-                ?>
+                <div class="desc">
+                    <?php
+                    the_post();
+                    the_content();
+                    ?>
+                </div>
                 <?php if(get_field('gallery_title')): ?>
                     <h2><?php the_field('gallery_title'); ?></h2>
                 <?php endif; ?>
@@ -43,11 +44,35 @@ get_header();
                 <div class="product_feedback_box">
                     <div class="flex_container">
                         <div class="col_left">
-                            <div class="title">Вы можете рассчитать предварительную стоимость вашего заказа</div>
-                            <div class="subtitle">Нажмите “Рассчитать заказ” и заполните форму. Мы сообщим вам предварительную стоимость вашего заказа</div>
+                            <div class="title">
+                                <?php
+                                if(get_field('order_block_title')):
+                                    echo the_field('order_block_title');
+                                else:
+                                    echo 'Вы можете рассчитать предварительную стоимость вашего заказа';
+                                endif;
+                                ?>
+                            </div>
+                            <div class="subtitle">
+                                <?php
+                                if(get_field('order_block_text')):
+                                    echo the_field('order_block_text');
+                                else:
+                                    echo 'Нажмите “Рассчитать заказ” и заполните форму. Мы сообщим вам предварительную стоимость вашего заказа';
+                                endif;
+                                ?>
+                            </div>
                         </div>
                         <div class="col_right">
-                            <button class="btn_default" data-toggle="modal" data-target="#feedback">Рассчитать заказ</button>
+                            <button class="btn_default" data-toggle="modal" data-target="#feedback">
+                                <?php
+                                if(get_field('order_btn_text')):
+                                    echo the_field('order_btn_text');
+                                else:
+                                    echo 'Рассчитать заказ';
+                                endif;
+                                ?>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -55,6 +80,5 @@ get_header();
         </div>
     </div>
 </div>
-
 
 <?php get_footer();?>

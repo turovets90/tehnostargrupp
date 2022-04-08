@@ -43,9 +43,19 @@ $(document).ready(function(){
     $('.menu .sub-menu').before(arrow);
 
     $('.menu .arrow').click(function(){
-        $(this).next().slideToggle();
-        $(this).toggleClass('act');
-        $(this).parent().toggleClass('active');
+        var sub_menu=$(this).next();
+        if($(sub_menu).is(':visible')){
+            $(sub_menu).slideUp();
+            //$(this).removeClass('act');
+            $(this).parent().removeClass('active');
+        }else{
+            $(sub_menu).slideDown();
+            //$(this).addClass('act');
+            $(this).parent().addClass('active');
+        }
+        //$(this).next().slideToggle();
+        //$(this).toggleClass('act');
+        //$(this).parent().toggleClass('active');
     });
 
     if($('.works_list > div').length > 3){

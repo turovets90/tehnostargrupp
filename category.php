@@ -8,7 +8,6 @@ get_header();
 
 <?php get_template_part('inc/breadcrumb'); ?>
 
-
 <div class="container">
     <div class="page_content">
         <div class="content">
@@ -49,6 +48,5 @@ get_header();
         </div>
     </div>
 </div>
-
 
 <?php get_footer();?>

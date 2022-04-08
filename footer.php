@@ -15,18 +15,17 @@
     <div class="container">
         <div class="flex_container">
             <div class="col_left">
-                <ul class="footer_menu">
-                    <li><a href="#">Изделия</a></li>
-                    <li><a href="#">Защитные конструкции</a></li>
-                    <li><a href="#">Алюминиевые перегородки</a></li>
-                    <li><a href="#">Офисная мебель</a></li>
-                    <li><a href="#">Сертификаты</a></li>
-                    <li><a href="#">Контакты</a></li>
-                </ul>
+                <?php
+                wp_nav_menu(
+                    array(
+                        'menu' => 'footer_menu',
+                    )
+                );
+                ?>
                 <div class="row">
                     <div class="col-12 col-md-8 col_xl">
-                        <div class="copyright">© 2021 - 2022 tehnostargrupp.by. Все права защищены.</div>
-                        <div class="dev">Сайт разработан <a href="">seologic.by</a></div>
+                        <div class="copyright">© 2021 - <?php echo date('Y')?> tehnostargrupp.by. Все права защищены.</div>
+                        <div class="dev">Сайт разработан <a href="https://www.seologic.by/" target="_blank">seologic.by</a></div>
                     </div>
                     <div class="col-12 col-md-4 fj_end"><a class="f_feedback" href="#feedback" data-toggle="modal">Связаться с нами</a></div>
                 </div>
@@ -57,8 +56,8 @@
                     <?php endif; ?>
                 </ul>
                 <div class="col_mb">
-                    <div class="copyright">© 2021 - 2022 tehnostargrupp.by. Все права защищены.</div>
-                    <div class="dev">Сайт разработан <a href="">seologic.by</a></div>
+                    <div class="copyright">© 2021 - <?php echo date('Y')?> tehnostargrupp.by. Все права защищены.</div>
+                    <div class="dev">Сайт разработан <a href="https://www.seologic.by/" target="_blank">seologic.by</a></div>
                 </div>
             </div>
         </div>
@@ -72,25 +71,7 @@
                 <div class="form_box">
                     <div class="title">Рассчитать заказ</div>
                     <div class="sub_title">Заполните форму и мы рассчитаем стоимость заказа</div>
-                    <form>
-                        <div class="c_form">
-                            <div class="field">
-                                <input class="form-control" type="text" placeholder="Ваше имя*" required="required"/>
-                            </div>
-                            <div class="field">
-                                <input class="form-control" type="text" placeholder="Телефон*" required="required"/>
-                            </div>
-                            <div class="field">
-                                <input class="form-control" type="text" placeholder="E-mail*" required="required"/>
-                            </div>
-                            <div class="field">
-                                <textarea class="form-control" placeholder="Сообщение"></textarea>
-                            </div>
-                            <div class="field">
-                                <button class="btn_default" type="submit">Отправить</button>
-                            </div>
-                        </div>
-                    </form>
+                    <?php echo do_shortcode('[contact-form-7 id="236" title="Рассчитать заказ"]');?>
                 </div>
             </div>
         </div>

@@ -525,6 +525,8 @@ header
             font-weight: 500
             text-decoration: none
             padding: 3px 10px
+            display: inline-block
+            line-height: 1.2
             &:hover, &:focus
               color: $red
 
@@ -859,8 +861,16 @@ main
   &:before
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.70711 0.292893C10.0976 0.683418 10.0976 1.31658 9.70711 1.70711L2.41421 9L9.70711 16.2929C10.0976 16.6834 10.0976 17.3166 9.70711 17.7071C9.31658 18.0976 8.68342 18.0976 8.29289 17.7071L0.292893 9.70711C-0.0976319 9.31658 -0.0976318 8.68342 0.292893 8.29289L8.29289 0.292893C8.68342 -0.0976312 9.31658 -0.0976311 9.70711 0.292893Z' fill='%23EBEBEB'/%3e%3c/svg%3e ")
 
+.partners_list
+  &:not(.slick-slider)
+    > div
+      width: 16.66%
 
 .works_list, .partners_list
+  &:not(.slick-slider)
+    +flex
+    +wrap
+
 
   .slick-slide
     text-align: center
@@ -873,6 +883,18 @@ main
       margin-left: -12px
   .works_list_item
     padding: 0 3px
+    picture
+      display: inline-block
+      width: 100%
+      text-align: center
+      a
+        display: inline-block
+      img
+        display: inline-block
+  &:not(.slick-slider)
+    > div
+      width: 33.33%
+
 .main_works
   padding-bottom: 45px
 
@@ -1078,7 +1100,7 @@ footer
       margin-bottom: 30px
     li
       margin-bottom: 10px
-  .footer_menu
+  .footer_menu, #menu-footer_menu
     +flex
     +ai-center
 
@@ -1240,6 +1262,7 @@ footer
         padding-left: 17px
         font-size: 13px
         font-family: $rubik
+        white-space: nowrap
 
 
     a
@@ -1310,12 +1333,23 @@ footer
       border-bottom: 1px solid #DBDBDB
       &.active
         border-bottom: 0
+        .arrow
+          &:before
+            //+transform(rotate(180deg))
       &.current-page-ancestor
+        .arrow
+          &:before
+            //+transform(rotate(180deg))
         .sub-menu
           display: block
       &.current_page_item
         > a
           color: $red
+        .arrow
+          &:before
+            //+transform(rotate(180deg))
+        .sub-menu
+          display: block
       .arrow
         position: absolute
         top: 18px
@@ -1556,10 +1590,14 @@ a[data-fancybox="gallery"]
       display: inline-block
       position: relative
       margin: 0 auto 55px
+      width: 100%
+      height: 320px
       @media (max-width: 1200px)
         margin-bottom: 45px
       @media (max-width: 767px)
         margin-bottom: 30px
+      img
+        max-height: 320px
 
     .icon
       position: absolute
@@ -1800,6 +1838,8 @@ a[data-fancybox="gallery"]
       +transform(rotate(-45deg))
   .modal-dialog
     margin-top: 50px
+    @media (min-width: 576px)
+      max-width: 544px
   .modal-content
     background: #2D2125
     border: 0
@@ -1872,8 +1912,12 @@ a[data-fancybox="gallery"]
 .admin-bar
   header
     top: 32px
+    &.fixed
+      top: 0
     @media (max-width: 767px)
       top: 46px
+      &.fixed
+        top: 0
 
   .main_menu
     @media (max-width: 1200px)
@@ -1881,3 +1925,111 @@ a[data-fancybox="gallery"]
     @media (max-width: 767px)
       padding-top: 60px
 
+.wpcf7-not-valid-tip, .wpcf7 form .wpcf7-response-output
+  font-size: 12px
+
+.wpcf7 form .wpcf7-response-output
+  margin: 10px 0 0
+  color: #fff
+  line-height: 1.4
+  padding: 7px
+.dnd-upload-status .dnd-upload-image
+  border: 1px solid #fff
+.dnd-upload-status .dnd-upload-details .remove-file
+  span
+    display: inline-block
+    width: 15px
+    height: 15px
+    border: 1px solid #fff
+    +border-radius(50%)
+    position: relative
+    text-indent: -9999px
+    &:before, &:after
+      +b_a
+      +m_a
+      width: 8px
+      height: 1px
+      background: #fff
+      display: block !important
+    &:before
+      +transform(rotate(45deg))
+    &:after
+      +transform(rotate(-45deg))
+
+.codedropz-upload-handler
+  border: 0
+  .dnd-upload-counter
+    display: none
+  .codedropz-upload-container
+    padding: 0
+    .codedropz-upload-inner
+      position: relative
+      padding-right: 70px
+      border: 1px solid rgba(255, 255, 255, 0.2)
+      height: 65px
+      text-align: left
+      padding-left: 15px
+      +flex
+      +col
+      +j-center
+      +wrap
+
+      h6
+        width: 100%
+        font-family: $rubik
+        font-style: normal
+        font-weight: 500
+        font-size: 16px
+        color: #FFFFFF
+        margin-bottom: 4px
+        line-height: 1
+      span
+        width: 100%
+        font-family: $rubik
+        font-style: normal
+        font-weight: 400
+        font-size: 12px
+        color: #D5D5D5
+        line-height: 1
+
+      .codedropz-btn-wrap
+        position: absolute
+        right: 0
+        top: 0
+        bottom: 0
+        width: 65px
+        height: 65px
+        border-left: 1px solid rgba(255, 255, 255, 0.2)
+        &:before
+          +b_a
+          left: 0
+          bottom: 2px
+          width: 100%
+          height: 3px
+          background: #DB2C23
+
+        .cd-upload-btn
+          display: inline-block
+          width: 100%
+          height: 100%
+          position: relative
+          text-indent: -9999px
+          &:before, &:after
+            +b_a
+            +m_a
+            width: 20px
+            height: 2px
+            background: #fff
+          &:after
+            +transform(rotate(90deg))
+
+
+.all_pages
+  a
+    color: $red
+    text-decoration: none
+    &:hover, &:focus
+      text-decoration: underline
+      color: #b41109
+  ul
+    margin-bottom: 0

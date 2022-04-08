@@ -25,31 +25,12 @@ get_header();
                     <div class="form_box">
                         <div class="title">Остались вопросы?</div>
                         <div class="sub_title">Заполните форму и мы рассчитаем стоимость заказа</div>
-                        <form>
-                            <div class="c_form">
-                                <div class="field">
-                                    <input class="form-control" type="text" placeholder="Ваше имя*"/>
-                                </div>
-                                <div class="field">
-                                    <input class="form-control" type="text" placeholder="Телефон*"/>
-                                </div>
-                                <div class="field">
-                                    <input class="form-control" type="text" placeholder="E-mail*"/>
-                                </div>
-                                <div class="field">
-                                    <textarea class="form-control" placeholder="Сообщение"></textarea>
-                                </div>
-                                <div class="field">
-                                    <button class="btn_default" type="submit">Отправить</button>
-                                </div>
-                            </div>
-                        </form>
+                        <?php echo do_shortcode('[contact-form-7 id="236" title="Рассчитать заказ"]');?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
 <?php get_footer();?>

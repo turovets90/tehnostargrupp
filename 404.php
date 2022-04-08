@@ -10,51 +10,40 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'tehnostargrupp' ); ?></h1>
-			</header><!-- .page-header -->
+<div class="page_content_header">
+    <div class="container">
+        <div class="breadcrumb_scroll_block">
+            <ul class="breadcrumb_list">
+                <li>
+                    <a class="home" href="/">
+                        <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.75 15.5V10.25H11.25V15.5H15.625V8.5H18.25L9.5 0.625L0.75 8.5H3.375V15.5H7.75Z" fill="#312F30"/>
+                        </svg>
+                    </a>
+                </li>
+                <?php if(function_exists('bcn_display')) {
+                    bcn_display();
+                }?>
+            </ul>
+        </div>
+        <h1 class="page_title">
+         404. Страница не найдена
+        </h1>
+    </div>
+</div>
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'tehnostargrupp' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'tehnostargrupp' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$tehnostargrupp_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'tehnostargrupp' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$tehnostargrupp_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
-
-	</main><!-- #main -->
+<div class="container">
+    <div class="page_content">
+        <div class="content">
+           <p>Страница не найдена. Запрашиваемая страница не найдена или была перемещена по другому адресу</p>
+            <?php get_search_form(); ?>
+            <ul class="all_pages">
+                <?php wp_list_pages( ) ?>
+            </ul>
+        </div>
+    </div>
+</div>
 
 <?php
 get_footer();
